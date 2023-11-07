@@ -1,0 +1,175 @@
+@import 'var.scss';
+
+.topbar {
+    background: $topbarColor;
+    position: relative;
+    z-index: 9999;
+    &_content {
+        color: $whiteColor;
+
+        &-right {
+            position: relative;
+            z-index: 9999;
+            display: flex;
+            justify-content: end;
+
+            &-link {
+                position: relative;
+                z-index: 9999; 
+                color: $whiteColor;
+                padding: 0 20px; 
+                border-right: 1px solid $whiteColor;
+            }
+            #login_link[href="/info"]:hover ~ .login_option{
+                transform: scale(1);
+            }
+            .login_option{
+                transform: scale(0);
+                transition: .3s;
+                position: absolute;
+                top: 16px;
+                z-index: 9999;
+                border-radius: 5px;
+                background-color: #333;
+                @extend %center-flex;
+                flex-direction: column;
+                a:first-child{
+                    display: none;
+                }
+                a{
+                    border-radius: 5px;
+                    padding: 8px 33px;
+                    font-size: 1.2rem;
+                    color: $whiteColor;
+                }
+                a:hover{
+                    background-color: $blackColor;
+                    color: $whiteColor;
+                }
+            }
+            .login_option:hover{
+                transform: scale(1);
+            }
+        }
+    }
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: $navColor;
+    
+    .header {
+        height: $navHeight;
+        transition: .5s;
+        &_content {
+            height: $navHeight;
+            @extend %center-align;
+            a{
+                display: none;
+            }
+            &-logo {
+                a {
+                    color: $logoColor;
+                    display: block;
+                    h1{
+                        font-size: 2.8rem;
+                    }
+                }
+            }
+
+            &-nav {
+                & a {
+                    color: $blackColor;
+                    margin: auto 10px;
+                    font-size: 1.4rem;
+                    font-weight: 500;
+                    display: block;
+                }
+            }
+
+            &-btn {
+                display: flex;
+                justify-content: end;
+                color: $blackColor;
+                cursor: pointer;
+                & a {
+                    position: relative;
+                    padding: 5px;
+                    display: block;
+                    margin-left: 15px;
+                    color: $blackColor;
+                    span{
+                        inset: -4px -4px auto auto;
+                        padding:0 5px;
+                        background-color: red;
+                        border-radius: $circle;
+                        color: $whiteColor;
+                    }
+                }
+                
+            }
+        }
+    }
+}
+.search{
+    transform: translateY(-100%);
+    transition: .5s;
+    opacity: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 9999999;
+    text-align: center;
+    &_box{
+        position: relative;
+        width: 100%;
+        height: 300px;
+        background-color: $whiteColor;
+        @extend %center-align;
+        flex-direction: column;
+        button#hide_search-form{
+            position: absolute;
+            inset: 20px 50px auto auto;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        &-input{
+            padding-top: 20px;
+            @extend %center-align;
+            input{
+                width: 300px;
+                height: 40px;
+                border-radius: 5px;
+                padding-left: 10px;
+                border: none;
+                background-color: rgba(162, 162, 162, 0.403);
+                margin: 0 5px;
+            }
+            button{
+                width: 60px;
+                height: 40px;
+                border-radius: 5px;
+                background: $blackColor;
+                color: $whiteColor;
+                font-size: 1.5rem;
+            }
+        }
+        .popular_search{
+            padding-top: 30px;
+            text-align: start;
+            width: 360px;
+            display: flex;
+            flex-direction: column;
+            color: #525050;
+            a{
+                font-size: 2rem;
+                color: $blackColor;
+                font-weight: 600;
+                margin: 6px 2px;
+            }
+        }
+    }
+}

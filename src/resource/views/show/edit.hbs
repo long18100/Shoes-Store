@@ -1,0 +1,26 @@
+<div class="box_edit_form">
+    <form class="edit_form" method="POST" action="/admin/{{product._id}}?_method=PUT">
+        <div class="edit_form_input">
+            <label for="">Name: </label>
+            <input name="name" type="text" value="{{product.name}}">
+            <label for="">Price: </label>
+            <input name="price" type="text" value="{{product.price}}">
+            <label for="">Image: </label>
+            <textarea name="image" >{{product.image}}</textarea>
+            <label for="">Type:</label>
+            <select name="type" id="">
+                <option value="men">------</option>
+                <option value="men">Men</option>
+                <option value="women">Women</option>
+                <option value="kid">Kid</option>
+            </select>
+            <label for="">New product: </label>
+            <select name="newCL" id="">
+                <option value="false">------</option>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+        </div>
+        <button>Submit</button>
+    </form>
+</div>

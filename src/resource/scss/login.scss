@@ -1,0 +1,62 @@
+@import 'var.scss';
+.login{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    inset: 0;
+    background-color: aliceblue;
+    z-index: 9999999;
+    @extend %center-flex;
+    &_form{
+        position: relative;
+        width: 400px;
+        height: 500px;
+        background-color: $whiteColor;
+        border-radius: $radius;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        &_content{
+            @extend %center-flex;
+            flex-direction: column;
+            &-item{
+                width: 80%;
+                text-align: center;
+                padding: 20px 0;
+            }
+            &-heading{
+                @extend %center-align;
+                a{
+                    font-size: 1.2rem;
+                    color: #333;
+                }
+            }
+            &-input{
+                input{
+                    width: 100%;
+                    height: 40px;
+                    border-radius: $radius;
+                    border: none;
+                    outline: none;
+                    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                    padding-left: 10px;
+                }
+            }
+            &-btn{
+                button,a{
+                    @extend %center-flex;
+                    width: 100%;
+                    height: 40px;
+                    border-radius: $radius;
+                    color: $whiteColor;
+                }
+                #submit-login{
+                    background-color: $blackColor;
+                }
+                #go-to-singup{
+                    background-color: $whiteColor;
+                    color: $blackColor;
+                    border: 1px solid #000;
+                }
+            }
+        }
+    }
+}

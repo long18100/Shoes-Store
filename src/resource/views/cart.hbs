@@ -1,0 +1,101 @@
+<section class="container">
+    <div class="cart">
+        <form id="cart_form" method="post" name="orderForm" action="/cart/add">
+            <table class="container cart-table">
+                <tr>
+                    <th>Order number</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Size</th>
+                    <th>Delete</th>
+                </tr>
+                {{#each user.productsInCart}}
+                <class="d-flex justify-content-center align-items-center">
+                    
+                    <td>{{sum @index 1}}</td>
+                    <td>{{this.name}} 
+                        <input name="name" value="{{this.name}}" type="text"> 
+                    </td>
+                    <td>{{convertToString this.price}} VND
+                        <input name="price" value="{{this.price}}" type="text" id="">
+                    </td>
+                    <td>{{this.size}}
+                        <input name="size" value="{{this.size}}" type="text" id="">
+                    </td>
+                    <td><a data-id="{{this._id}}" data-bs-toggle="modal" data-bs-target="#deleteProductForm" href=""><i class="fa-solid fa-trash-can fa-xl"></i></a></td>
+                    </tr>
+                    {{/each}}
+                    <tr>
+                        <td>Total:</td>
+                        <td colspan="3">{{convertToString (totalMoney user.productsInCart)}} VND
+                            <input name="totalMoney" value="{{totalMoney user.productsInCart}}" type="number">
+                        </td>
+                        <td><button id="pay" type="submit">Pay</button></td>
+                    </tr>
+            </table>
+        </form>
+        <div class="not_login-ntf container">
+            <div class="not_login-ntf_content">
+                <h2>You are not logged in, log in now?</h2>
+                <a href="/login">Login</a>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="modal fade" id="deleteProductForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Delete</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to delete it?
+                    </div>
+                    <div class="modal-footer">
+                        <button id="deleteProductBtn" type="button" class="btn btn-danger">Delete</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+<form name="delete_product-form" action="" method="post"></form>
+<script>
+    let cartForm = document.getElementById('cart_form')
+    let ntf = document.querySelector('.not_login-ntf')
+    let payBtn = document.getElementById('pay')
+    if (isNaN({{totalMoney user.productsInCart}})) {
+        cartForm.style.display = "none"
+        ntf.style.display = "block"
+    }else{
+        ntf.style.display = "none"
+        cartForm.style.display = "block"
+    }
+   
+</script>
+<script>
+    payBtn.addEventListener('click',() => {
+            if({{user.productsInCart.length}} === 0){
+                alert('Cart is empty')
+                payBtn.type = 'button'
+            }else{
+                alert("Payment success !!!!")
+            }
+        }) 
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let productId;
+        let deleteProductBtn = document.getElementById('deleteProductBtn')
+        let deleteForm = document.forms['delete_product-form']
+        $('#deleteProductForm').on('show.bs.modal', (e) => {
+            let button = $(e.relatedTarget)
+            productId = button.data('id')
+        })
+        deleteProductBtn.addEventListener('click', () => {
+            deleteForm.action = 'cart/' + productId + '?_method=PUT'
+            deleteForm.submit()
+        })
+    })
+</script>

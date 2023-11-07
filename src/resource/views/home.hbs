@@ -1,0 +1,185 @@
+<div class="container-fluid p-0" id="home-page">
+    <section class="container-fluid slide-show p-0">
+        <div class="container overflow-hidden">
+            <div class="slide d-flex">
+                <div class="slide_item container">
+                    <div class="slide_item_description">
+                        <div class="slide_item_description-info">
+                            <h1>NEW <br>COLLECTION</h1>
+                        </div>
+                        <div class="slide_item_description-btn">
+                            <a href="/products">Shop now</a>
+                            <a href="/collection">Explore</a>
+                        </div>
+                    </div>
+                    <div class="slide_item-image">
+                        <div class="slide_item-image-box">
+                            <img src="images/slider/sl1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="slide_item container">
+                    <div class="slide_item_description">
+                        <div class="slide_item_description-info">
+                            <h1>NEW <br>COLLECTION</h1>
+                        </div>
+                        <div class="slide_item_description-btn">
+                            <a href="/products">Shop now</a>
+                            <a href="/collection">Explore</a>
+                        </div>
+                    </div>
+                    <div class="slide_item-image">
+                        <div class="slide_item-image-box">
+                            <img src="images/slider/sl2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="slide_item container">
+                    <div class="slide_item_description">
+                        <div class="slide_item_description-info">
+                            <h1>NEW <br>COLLECTION</h1>
+                        </div>
+                        <div class="slide_item_description-btn">
+                            <a href="/products">Shop now</a>
+                            <a href="/collection">Explore</a>
+                        </div>
+                    </div>
+                    <div class="slide_item-image">
+                        <div class="slide_item-image-box">
+                            <img src="images/slider/sl3.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="slide_item container">
+                    <div class="slide_item_description">
+                        <div class="slide_item_description-info">
+                            <h1>NEW <br>COLLECTION</h1>
+                        </div>
+                        <div class="slide_item_description-btn">
+                            <a href="/products">Shop now</a>
+                            <a href="/collection">Explore</a>
+                        </div>
+                    </div>
+                    <div class="slide_item-image">
+                        <div class="slide_item-image-box">
+                            <img src="images/slider/sl4.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="directional">
+            <button id="prev-slide"><i class="fa-solid fa-chevron-left fa-2xl"></i></button>
+            <button id="next-slide"><i class="fa-solid fa-chevron-right fa-2xl"></i></button>
+        </div>
+        <div class="current-slide ">
+            <div class="container d-flex">
+                <div class="current-slide_item active-slide">
+                    <img src="images/currenSlide/sl1.1.png" alt="">
+                </div>
+                <div class="current-slide_item ">
+                    <img src="images/currenSlide/sl2.1.png" alt="">
+                </div>
+                <div class="current-slide_item">
+                    <img src="images/currenSlide/sl3.1.png" alt="">
+                </div>
+                <div class="current-slide_item">
+                    <img src="images/currenSlide/sl4.1.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container-fluid itd_np">
+        <div class="container text-center">
+            <span>Nike Vomero 17</span>
+            <h1>INCREDIBLY SOFT, BOLDLY RESPONSIVE</h1>
+            <span>Set off on your next run with snap in your step and cushion underfoot.</span>
+            <a href="">Shop</a>
+        </div>
+    </section>
+
+    <section class="banner-box container-fluid p-0">
+        <div class="banner container">
+            <div class="heading_st">
+                <h1>The Essentials</h1>
+            </div>
+            <div class="row">
+
+                <div class="banner_item col-4">
+                    <div class="banner_item_box" style="background-image: url(images/banner/bn1.jpg);">
+                        <div class="banner_item_box_heading">
+                            <h1>Men</h1>
+                            <span>Spring 2023</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner_item col-4">
+                    <div class="banner_item_box" style="background-image: url(images/banner/bn2.jpg);">
+                        <div class="banner_item_box_heading">
+                            <h1>Women</h1>
+                            <span>Spring 2023</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner_item col-4">
+                    <div class="banner_item_box" style="background-image: url(images/banner/bn3.jpg);">
+                        <div class="banner_item_box_heading">
+                            <h1>Kids</h1>
+                            <span>Spring 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container products">
+        <div class="heading_st">
+            <h1>Popular products</h1>
+        </div>
+        <div class="row">
+            {{#each products}}
+            <div class="col-3">
+                <div class="card mb-4">
+                    <a href="/products/{{this.name}}">
+                        <img src="{{this.image}}" class="card-img-top" alt="...">
+                    </a>
+                    <div class="card-body d-flex justify-content-between align-items-center">
+                        <div class="">
+                            <h4 class="card-title">{{this.name}}</h4>
+                            <p class="card-text">{{convertToString this.price}} VND</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+    <section class="container-fluid feature">
+        <div class="container">
+            <div class="heading_st">
+                <h1>Featured</h1>
+            </div>
+            <div class="row">
+                <div class="feature_item col-6">
+                    <a href="" class="d-block" style="background-image: url(images/featureBg/ft1.jpg);">
+                        <div class="feature_item_heading">
+                            <h1>Nike Full Force Low</h1>
+                            <h2>Throw Them On and Go Full Force</h2>
+                            <button href="" class="feature_btn">Shop</button>
+                        </div>
+                    </a>
+                </div>
+                <div class="feature_item col-6">
+                    <a href="" class="d-block" style="background-image: url(images/featureBg/ft2.jpg);">
+                        <div class="feature_item_heading">
+                            <h1>Nike Phoenix Waffle</h1>
+                            <h2>All-day Comfort Meets All-day Style</h2>
+                            <button href="" class="feature_btn">Shop</button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>

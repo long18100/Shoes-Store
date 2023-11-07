@@ -1,0 +1,76 @@
+
+
+// Color
+$mainColor: #000000;
+
+$whiteColor: #fff;
+$blackColor: #000;
+
+$btnColor: #272727;
+
+$headerColor: #ffffff;
+$topbarColor: #111111;
+$navColor: transparent;
+$logoColor: #000;
+
+$footerColor: #111111;
+$footerNavColor: #bebebe;
+$copyrightColor: #bebebe87;
+$btnFooterColor: #ff7a3c;
+
+$navFilterColor: #474747;
+//Background
+$backgroundSlide: url(/images/masks/bg_sl.svg) #c3c4c4;
+//Radius
+$radius: 5px;
+$circle: 50%;
+
+//Header 
+$headerHeight: 80px;
+$topbarHeight: 20px;
+$navHeight: 60px;
+
+//Footer
+$footerHeight:320px;
+//Home Page
+$slideHeight: calc(100vh);
+
+$bannerHeight: 400px; 
+
+%center {
+    position: absolute;
+    top: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+}
+%center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+%center-align {
+    display: flex;
+    align-items: center;
+}
+%center-justify{
+    display: flex;
+    justify-content: center;
+}
+@mixin box($w, $h, $bg, $br, $cl) {
+    width: $w;
+    height: $h;
+    background: $bg;
+    color: $cl;
+    border-radius: $br;
+}
+#to-top{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    padding: 10px;
+    border-radius: $circle;
+    background-color: #0000009c;
+    color: $whiteColor; 
+    transition: all .5s;
+    opacity: 0;
+}

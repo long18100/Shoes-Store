@@ -1,0 +1,39 @@
+#to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #0000009c;
+  color: #fff;
+  transition: all .5s;
+  opacity: 0; }
+
+#shop-page {
+  padding-top: 50px; }
+  #shop-page .filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    #shop-page .filter_nav a {
+      margin-right: 10px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: #474747;
+      color: #fff; }
+    #shop-page .filter_sort label {
+      font-size: 1.5rem;
+      margin-right: 5px; }
+    #shop-page .filter_sort select {
+      width: 100px;
+      aspect-ratio: 3/1;
+      outline: none;
+      border-radius: 5px;
+      font-size: 1.3rem; }
+  #shop-page .product-quality {
+    margin: 20px auto; }
+  #shop-page .products .card-body a {
+    padding: 5px 15px;
+    font-size: 1.3rem;
+    color: #fff;
+    border-radius: 5px; }

@@ -1,0 +1,28 @@
+const productRouter = require('./products')
+const menRouter = require('./men')
+const womenRouter = require('./women')
+const kidRouter = require('./kid')
+const cartRouter = require('./cart')
+const siteRouter = require('./site')
+const adminRouter = require('./admin')
+const adminCusRouter = require('./admin_cus')
+const adminOrderRouter = require('./admin_order')
+const loginRouter = require('./login')
+const registerRouter = require('./register')
+const infoRouter = require('./info')
+function route(app) {
+    app.use('/products', productRouter)
+    app.use('/men', menRouter)
+    app.use('/women', womenRouter)
+    app.use('/kid', kidRouter)
+    app.use('/cart', cartRouter)
+    app.use('/admin', adminRouter)
+    app.use('/adminCustomer', adminCusRouter)
+    app.use('/adminOrder', adminOrderRouter)
+    app.use('/login', loginRouter)
+    app.use('/register', registerRouter)
+    app.use('/info', infoRouter)
+
+    app.use('/', siteRouter)
+}
+module.exports = route

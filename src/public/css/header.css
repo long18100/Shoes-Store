@@ -1,0 +1,152 @@
+.topbar_content-right .login_option {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+header .header_content, .search_box, .search_box-input {
+  display: flex;
+  align-items: center; }
+
+#to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #0000009c;
+  color: #fff;
+  transition: all .5s;
+  opacity: 0; }
+
+.topbar {
+  background: #111111;
+  position: relative;
+  z-index: 9999; }
+  .topbar_content {
+    color: #fff; }
+    .topbar_content-right {
+      position: relative;
+      z-index: 9999;
+      display: flex;
+      justify-content: end; }
+      .topbar_content-right-link {
+        position: relative;
+        z-index: 9999;
+        color: #fff;
+        padding: 0 20px;
+        border-right: 1px solid #fff; }
+      .topbar_content-right #login_link[href="/info"]:hover ~ .login_option {
+        transform: scale(1); }
+      .topbar_content-right .login_option {
+        transform: scale(0);
+        transition: .3s;
+        position: absolute;
+        top: 16px;
+        z-index: 9999;
+        border-radius: 5px;
+        background-color: #333;
+        flex-direction: column; }
+        .topbar_content-right .login_option a:first-child {
+          display: none; }
+        .topbar_content-right .login_option a {
+          border-radius: 5px;
+          padding: 8px 33px;
+          font-size: 1.2rem;
+          color: #fff; }
+        .topbar_content-right .login_option a:hover {
+          background-color: #000;
+          color: #fff; }
+      .topbar_content-right .login_option:hover {
+        transform: scale(1); }
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: transparent; }
+  header .header {
+    height: 60px;
+    transition: .5s; }
+    header .header_content {
+      height: 60px; }
+      header .header_content a {
+        display: none; }
+      header .header_content-logo a {
+        color: #000;
+        display: block; }
+        header .header_content-logo a h1 {
+          font-size: 2.8rem; }
+      header .header_content-nav a {
+        color: #000;
+        margin: auto 10px;
+        font-size: 1.4rem;
+        font-weight: 500;
+        display: block; }
+      header .header_content-btn {
+        display: flex;
+        justify-content: end;
+        color: #000;
+        cursor: pointer; }
+        header .header_content-btn a {
+          position: relative;
+          padding: 5px;
+          display: block;
+          margin-left: 15px;
+          color: #000; }
+          header .header_content-btn a span {
+            inset: -4px -4px auto auto;
+            padding: 0 5px;
+            background-color: red;
+            border-radius: 50%;
+            color: #fff; }
+
+.search {
+  transform: translateY(-100%);
+  transition: .5s;
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 9999999;
+  text-align: center; }
+  .search_box {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-color: #fff;
+    flex-direction: column; }
+    .search_box button#hide_search-form {
+      position: absolute;
+      inset: 20px 50px auto auto;
+      font-size: 1.5rem;
+      font-weight: 600; }
+    .search_box-input {
+      padding-top: 20px; }
+      .search_box-input input {
+        width: 300px;
+        height: 40px;
+        border-radius: 5px;
+        padding-left: 10px;
+        border: none;
+        background-color: rgba(162, 162, 162, 0.403);
+        margin: 0 5px; }
+      .search_box-input button {
+        width: 60px;
+        height: 40px;
+        border-radius: 5px;
+        background: #000;
+        color: #fff;
+        font-size: 1.5rem; }
+    .search_box .popular_search {
+      padding-top: 30px;
+      text-align: start;
+      width: 360px;
+      display: flex;
+      flex-direction: column;
+      color: #525050; }
+      .search_box .popular_search a {
+        font-size: 2rem;
+        color: #000;
+        font-weight: 600;
+        margin: 6px 2px; }

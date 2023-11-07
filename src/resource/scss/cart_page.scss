@@ -1,0 +1,72 @@
+@import 'var.scss';
+
+.cart {
+    min-height: 500px;
+    padding: 40px 0;
+    .not_login-ntf{
+        @extend %center-flex;
+        height: 300px;
+        &_content{
+            text-align: center;
+            h2{
+                margin: 30px 0;
+            }
+            a{
+                padding: 15px 40px;
+                border-radius: 20px;
+                background-color: $blackColor;
+                color: $whiteColor;
+            }
+        }
+    }
+    &-table {
+
+        tr {
+            text-align: center;
+            border-bottom: 1px solid #6a6a6a;
+            height: 45px;
+
+            th {
+                font-size: 1.5rem;
+            }
+
+            td {
+                font-size: 1.4rem;
+                font-weight: 500;
+
+                a {
+                    color: rgb(0, 0, 0);
+                }
+
+                input {
+                    width: 0;
+                    transform: scale(0);
+                }
+            }
+        }
+
+        tr:first-child {
+            background-color: #000000;
+            color: $whiteColor;
+        }
+
+        tr:last-child {
+            color: #ffffff;
+            background-color: #000000;
+
+            td {
+
+                font-size: 1.8rem;
+
+                button {
+                    width: 100px;
+                    height: 45px;
+                    margin: 5px 0;
+                    border-radius: $radius;
+                    color: $blackColor;
+                    background-color: #ffffff;
+                }
+            }
+        }
+    }
+}

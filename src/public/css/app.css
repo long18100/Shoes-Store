@@ -1,0 +1,1110 @@
+@import url("var.scss");
+@keyframes throw {
+  from {
+    transform: translateY(-100%); }
+  to {
+    transform: translateY(0); } }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+a {
+  text-decoration: none; }
+
+button {
+  border: none;
+  background: transparent;
+  cursor: pointer; }
+
+section {
+  position: relative; }
+
+.heading_st {
+  padding: 10px 0; }
+
+.topbar_content-right .login_option, #home-page section.slide-show .slide_item-image, #home-page section.slide-show .slide_item-image-box, #home-page section.slide-show .current-slide_item, #home-page section.itd_np div, #home-page section.itd_np div a, .cart .not_login-ntf, .product-detail_image div, .box_edit_form, .box_edit_form .edit_form, .box_edit_form .edit_form_input, .login, .login_form_content, .login_form_content-btn button, .login_form_content-btn a, .register, .register_form_content, .register_form_content-btn button, .register_form_content-btn a, .info_content, #admin .sidebar_item-link, #admin .create_product {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+header .header_content, .search_box, .search_box-input, .abu_banner_left a, .login_form_content-heading, .register_form_content-heading {
+  display: flex;
+  align-items: center; }
+
+#admin #admin_product {
+  display: flex;
+  justify-content: center; }
+
+#to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #0000009c;
+  color: #fff;
+  transition: all .5s;
+  opacity: 0; }
+
+.topbar {
+  background: #111111;
+  position: relative;
+  z-index: 9999; }
+  .topbar_content {
+    color: #fff; }
+    .topbar_content-right {
+      position: relative;
+      z-index: 9999;
+      display: flex;
+      justify-content: end; }
+      .topbar_content-right-link {
+        position: relative;
+        z-index: 9999;
+        color: #fff;
+        padding: 0 20px;
+        border-right: 1px solid #fff; }
+      .topbar_content-right #login_link[href="/info"]:hover ~ .login_option {
+        transform: scale(1); }
+      .topbar_content-right .login_option {
+        transform: scale(0);
+        transition: .3s;
+        position: absolute;
+        top: 16px;
+        z-index: 9999;
+        border-radius: 5px;
+        background-color: #333;
+        flex-direction: column; }
+        .topbar_content-right .login_option a:first-child {
+          display: none; }
+        .topbar_content-right .login_option a {
+          border-radius: 5px;
+          padding: 8px 33px;
+          font-size: 1.2rem;
+          color: #fff; }
+        .topbar_content-right .login_option a:hover {
+          background-color: #000;
+          color: #fff; }
+      .topbar_content-right .login_option:hover {
+        transform: scale(1); }
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: transparent; }
+  header .header {
+    height: 60px;
+    transition: .5s; }
+    header .header_content {
+      height: 60px; }
+      header .header_content a {
+        display: none; }
+      header .header_content-logo a {
+        color: #000;
+        display: block; }
+        header .header_content-logo a h1 {
+          font-size: 2.8rem; }
+      header .header_content-nav a {
+        color: #000;
+        margin: auto 10px;
+        font-size: 1.4rem;
+        font-weight: 500;
+        display: block; }
+      header .header_content-btn {
+        display: flex;
+        justify-content: end;
+        color: #000;
+        cursor: pointer; }
+        header .header_content-btn a {
+          position: relative;
+          padding: 5px;
+          display: block;
+          margin-left: 15px;
+          color: #000; }
+          header .header_content-btn a span {
+            inset: -4px -4px auto auto;
+            padding: 0 5px;
+            background-color: red;
+            border-radius: 50%;
+            color: #fff; }
+
+.search {
+  transform: translateY(-100%);
+  transition: .5s;
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 9999999;
+  text-align: center; }
+  .search_box {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-color: #fff;
+    flex-direction: column; }
+    .search_box button#hide_search-form {
+      position: absolute;
+      inset: 20px 50px auto auto;
+      font-size: 1.5rem;
+      font-weight: 600; }
+    .search_box-input {
+      padding-top: 20px; }
+      .search_box-input input {
+        width: 300px;
+        height: 40px;
+        border-radius: 5px;
+        padding-left: 10px;
+        border: none;
+        background-color: rgba(162, 162, 162, 0.403);
+        margin: 0 5px; }
+      .search_box-input button {
+        width: 60px;
+        height: 40px;
+        border-radius: 5px;
+        background: #000;
+        color: #fff;
+        font-size: 1.5rem; }
+    .search_box .popular_search {
+      padding-top: 30px;
+      text-align: start;
+      width: 360px;
+      display: flex;
+      flex-direction: column;
+      color: #525050; }
+      .search_box .popular_search a {
+        font-size: 2rem;
+        color: #000;
+        font-weight: 600;
+        margin: 6px 2px; }
+
+.topbar_content-right .login_option, #home-page section.slide-show .slide_item-image, #home-page section.slide-show .slide_item-image-box, #home-page section.slide-show .current-slide_item, #home-page section.itd_np div, #home-page section.itd_np div a, .cart .not_login-ntf, .product-detail_image div, .box_edit_form, .box_edit_form .edit_form, .box_edit_form .edit_form_input, .login, .login_form_content, .login_form_content-btn button, .login_form_content-btn a, .register, .register_form_content, .register_form_content-btn button, .register_form_content-btn a, .info_content, #admin .sidebar_item-link, #admin .create_product {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+header .header_content, .search_box, .search_box-input, .abu_banner_left a, .login_form_content-heading, .register_form_content-heading {
+  display: flex;
+  align-items: center; }
+
+#admin #admin_product {
+  display: flex;
+  justify-content: center; }
+
+#to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #0000009c;
+  color: #fff;
+  transition: all .5s;
+  opacity: 0; }
+
+footer {
+  min-height: 320px;
+  background: #111111;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  footer .footer_item {
+    padding-top: 40px; }
+    footer .footer_item h1 {
+      color: #fff;
+      font-size: 1.5rem; }
+    footer .footer_item-content {
+      display: flex;
+      flex-direction: column; }
+      footer .footer_item-content a,
+      footer .footer_item-content p {
+        color: #bebebe;
+        font-size: 1.3rem;
+        line-height: 30px; }
+      footer .footer_item-content p {
+        width: 75%; }
+      footer .footer_item-content .social-contacts {
+        padding-top: 15px; }
+        footer .footer_item-content .social-contacts a {
+          margin-right: 10px; }
+      footer .footer_item-content input {
+        width: 90%;
+        height: 30px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        padding-left: 10px;
+        margin-top: 20px; }
+      footer .footer_item-content button {
+        width: 100px;
+        height: 30px;
+        border-radius: 5px;
+        background-color: #ff7a3c;
+        color: #fff;
+        margin-top: 20px; }
+  footer .pay-method_item {
+    width: 40px;
+    aspect-ratio: 2/1;
+    background-size: 90%;
+    background-position: center;
+    border-radius: 2px;
+    margin: 20px 5px; }
+  footer .pay-method .copyright {
+    color: #bebebe87;
+    margin: 5px 0; }
+
+.topbar_content-right .login_option, #home-page section.slide-show .slide_item-image, #home-page section.slide-show .slide_item-image-box, #home-page section.slide-show .current-slide_item, #home-page section.itd_np div, #home-page section.itd_np div a, .cart .not_login-ntf, .product-detail_image div, .box_edit_form, .box_edit_form .edit_form, .box_edit_form .edit_form_input, .login, .login_form_content, .login_form_content-btn button, .login_form_content-btn a, .register, .register_form_content, .register_form_content-btn button, .register_form_content-btn a, .info_content, #admin .sidebar_item-link, #admin .create_product {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+header .header_content, .search_box, .search_box-input, .abu_banner_left a, .login_form_content-heading, .register_form_content-heading {
+  display: flex;
+  align-items: center; }
+
+#admin #admin_product {
+  display: flex;
+  justify-content: center; }
+
+#to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #0000009c;
+  color: #fff;
+  transition: all .5s;
+  opacity: 0; }
+
+#home-page {
+  margin-top: -60px; }
+  #home-page section.slide-show {
+    width: 100%;
+    position: relative;
+    height: calc(100vh);
+    background: url(/images/masks/bg_sl.svg) #c3c4c4;
+    background-size: 100% 90%;
+    background-repeat: no-repeat;
+    padding-bottom: 60px; }
+    #home-page section.slide-show:hover > .directional {
+      opacity: 1; }
+    #home-page section.slide-show .slide {
+      position: relative;
+      width: max-content;
+      height: calc(100vh);
+      overflow: hidden;
+      transition: all .5s ease-in-out; }
+      #home-page section.slide-show .slide_item {
+        transition: 1s;
+        height: 100%;
+        display: flex; }
+        #home-page section.slide-show .slide_item_description {
+          width: 50%;
+          margin-top: 15%; }
+          #home-page section.slide-show .slide_item_description-info {
+            width: 100%; }
+            #home-page section.slide-show .slide_item_description-info h1 {
+              width: fit-content;
+              font-size: 7rem;
+              font-weight: 1000;
+              border-bottom: 3px solid #000000; }
+            #home-page section.slide-show .slide_item_description-info span {
+              width: 50px;
+              text-align: justify; }
+          #home-page section.slide-show .slide_item_description-btn {
+            margin-top: 20px;
+            display: flex; }
+            #home-page section.slide-show .slide_item_description-btn a {
+              font-weight: 500;
+              padding: 10px 20px;
+              margin-right: 10px;
+              border-radius: 5px;
+              color: #fff;
+              background: #000000; }
+            #home-page section.slide-show .slide_item_description-btn a:last-child {
+              background: #fff;
+              color: #000; }
+        #home-page section.slide-show .slide_item-image {
+          width: 50%;
+          justify-content: end; }
+          #home-page section.slide-show .slide_item-image-box {
+            height: 100%; }
+            #home-page section.slide-show .slide_item-image-box img {
+              width: 100%;
+              object-fit: cover; }
+    #home-page section.slide-show .directional {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      justify-content: space-between;
+      transition: .5s;
+      opacity: 0; }
+      #home-page section.slide-show .directional button {
+        width: 40px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        border: 1px solid #ffffff71;
+        margin: auto 20px;
+        background: transparent;
+        color: #fff; }
+    #home-page section.slide-show .current-slide {
+      width: 100%;
+      position: absolute;
+      bottom: 10%; }
+      #home-page section.slide-show .current-slide_item {
+        width: 100px;
+        aspect-ratio: 3/2;
+        margin-right: 10px;
+        border-radius: 5px;
+        cursor: pointer; }
+        #home-page section.slide-show .current-slide_item img {
+          object-fit: contain;
+          width: 100%;
+          transition: all .5s; }
+      #home-page section.slide-show .current-slide_item.active-slide img {
+        transform: scale(1.2);
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.897)); }
+  #home-page section.itd_np {
+    padding: 50px 0; }
+    #home-page section.itd_np div {
+      flex-direction: column;
+      width: 50%; }
+      #home-page section.itd_np div span {
+        font-size: 1.5rem;
+        font-weight: 500; }
+      #home-page section.itd_np div h1 {
+        font-size: 7rem;
+        font-weight: 1000; }
+      #home-page section.itd_np div a {
+        display: block;
+        width: 90px;
+        height: 40px;
+        margin: 10px 0;
+        border-radius: 20px;
+        background: #000;
+        color: #fff;
+        font-weight: 500; }
+  #home-page section.banner-box .banner {
+    padding-bottom: 50px; }
+    #home-page section.banner-box .banner_item {
+      height: 400px; }
+      #home-page section.banner-box .banner_item_box {
+        height: 100%;
+        background-position: unset;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; }
+        #home-page section.banner-box .banner_item_box_heading {
+          height: 30%;
+          padding-left: 20px; }
+          #home-page section.banner-box .banner_item_box_heading h2 {
+            font-size: 1.6rem; }
+          #home-page section.banner-box .banner_item_box_heading span {
+            font-size: 1.2rem;
+            color: #333333bb; }
+        #home-page section.banner-box .banner_item_box_btn {
+          padding-left: 20px; }
+          #home-page section.banner-box .banner_item_box_btn a {
+            padding: 10px 30px;
+            background: #272727;
+            color: #fff;
+            border-radius: 5px; }
+  #home-page section.feature {
+    padding: 50px 0; }
+    #home-page section.feature .feature_item {
+      position: relative; }
+      #home-page section.feature .feature_item a {
+        height: 630px;
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat; }
+        #home-page section.feature .feature_item a .feature_item_heading {
+          color: #000;
+          position: absolute;
+          inset: auto auto 30px 30px; }
+          #home-page section.feature .feature_item a .feature_item_heading h1 {
+            font-size: 3.5rem; }
+          #home-page section.feature .feature_item a .feature_item_heading button {
+            width: 80px;
+            height: 35px;
+            margin-top: 10px;
+            border-radius: 20px;
+            background: #000;
+            color: #fff;
+            font-weight: 600;
+            transition: all .3s; }
+          #home-page section.feature .feature_item a .feature_item_heading button:hover {
+            filter: invert(100%); }
+    #home-page section.feature .feature_item:last-child .feature_item_heading {
+      color: #fff;
+      position: absolute;
+      inset: auto auto 30px 20px; }
+      #home-page section.feature .feature_item:last-child .feature_item_heading button {
+        background: #fff;
+        color: #000; }
+
+.topbar_content-right .login_option, #home-page section.slide-show .slide_item-image, #home-page section.slide-show .slide_item-image-box, #home-page section.slide-show .current-slide_item, #home-page section.itd_np div, #home-page section.itd_np div a, .cart .not_login-ntf, .product-detail_image div, .box_edit_form, .box_edit_form .edit_form, .box_edit_form .edit_form_input, .login, .login_form_content, .login_form_content-btn button, .login_form_content-btn a, .register, .register_form_content, .register_form_content-btn button, .register_form_content-btn a, .info_content, #admin .sidebar_item-link, #admin .create_product {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+header .header_content, .search_box, .search_box-input, .abu_banner_left a, .login_form_content-heading, .register_form_content-heading {
+  display: flex;
+  align-items: center; }
+
+#admin #admin_product {
+  display: flex;
+  justify-content: center; }
+
+#to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #0000009c;
+  color: #fff;
+  transition: all .5s;
+  opacity: 0; }
+
+#shop-page {
+  padding-top: 50px; }
+  #shop-page .filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    #shop-page .filter_nav a {
+      margin-right: 10px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: #474747;
+      color: #fff; }
+    #shop-page .filter_sort label {
+      font-size: 1.5rem;
+      margin-right: 5px; }
+    #shop-page .filter_sort select {
+      width: 100px;
+      aspect-ratio: 3/1;
+      outline: none;
+      border-radius: 5px;
+      font-size: 1.3rem; }
+  #shop-page .product-quality {
+    margin: 20px auto; }
+  #shop-page .products .card-body a {
+    padding: 5px 15px;
+    font-size: 1.3rem;
+    color: #fff;
+    border-radius: 5px; }
+
+.topbar_content-right .login_option, #home-page section.slide-show .slide_item-image, #home-page section.slide-show .slide_item-image-box, #home-page section.slide-show .current-slide_item, #home-page section.itd_np div, #home-page section.itd_np div a, .cart .not_login-ntf, .product-detail_image div, .box_edit_form, .box_edit_form .edit_form, .box_edit_form .edit_form_input, .login, .login_form_content, .login_form_content-btn button, .login_form_content-btn a, .register, .register_form_content, .register_form_content-btn button, .register_form_content-btn a, .info_content, #admin .sidebar_item-link, #admin .create_product {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+header .header_content, .search_box, .search_box-input, .abu_banner_left a, .login_form_content-heading, .register_form_content-heading {
+  display: flex;
+  align-items: center; }
+
+#admin #admin_product {
+  display: flex;
+  justify-content: center; }
+
+#to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #0000009c;
+  color: #fff;
+  transition: all .5s;
+  opacity: 0; }
+
+.cart {
+  min-height: 500px;
+  padding: 40px 0; }
+  .cart .not_login-ntf {
+    height: 300px; }
+    .cart .not_login-ntf_content {
+      text-align: center; }
+      .cart .not_login-ntf_content h2 {
+        margin: 30px 0; }
+      .cart .not_login-ntf_content a {
+        padding: 15px 40px;
+        border-radius: 20px;
+        background-color: #000;
+        color: #fff; }
+  .cart-table tr {
+    text-align: center;
+    border-bottom: 1px solid #6a6a6a;
+    height: 45px; }
+    .cart-table tr th {
+      font-size: 1.5rem; }
+    .cart-table tr td {
+      font-size: 1.4rem;
+      font-weight: 500; }
+      .cart-table tr td a {
+        color: black; }
+      .cart-table tr td input {
+        width: 0;
+        transform: scale(0); }
+  .cart-table tr:first-child {
+    background-color: #000000;
+    color: #fff; }
+  .cart-table tr:last-child {
+    color: #ffffff;
+    background-color: #000000; }
+    .cart-table tr:last-child td {
+      font-size: 1.8rem; }
+      .cart-table tr:last-child td button {
+        width: 100px;
+        height: 45px;
+        margin: 5px 0;
+        border-radius: 5px;
+        color: #000;
+        background-color: #ffffff; }
+
+.topbar_content-right .login_option, #home-page section.slide-show .slide_item-image, #home-page section.slide-show .slide_item-image-box, #home-page section.slide-show .current-slide_item, #home-page section.itd_np div, #home-page section.itd_np div a, .cart .not_login-ntf, .product-detail_image div, .box_edit_form, .box_edit_form .edit_form, .box_edit_form .edit_form_input, .login, .login_form_content, .login_form_content-btn button, .login_form_content-btn a, .register, .register_form_content, .register_form_content-btn button, .register_form_content-btn a, .info_content, #admin .sidebar_item-link, #admin .create_product {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+header .header_content, .search_box, .search_box-input, .abu_banner_left a, .login_form_content-heading, .register_form_content-heading {
+  display: flex;
+  align-items: center; }
+
+#admin #admin_product {
+  display: flex;
+  justify-content: center; }
+
+#to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #0000009c;
+  color: #fff;
+  transition: all .5s;
+  opacity: 0; }
+
+.abu {
+  background-color: #1f1f1f;
+  border-bottom: 1px solid #fff; }
+  .abu_banner {
+    transform: translateY(-60px);
+    background-color: #000;
+    padding-top: 60px; }
+    .abu_banner_left a {
+      color: #fff; }
+      .abu_banner_left a span {
+        padding: 6px 8px;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        padding-right: 10px;
+        margin-right: 10px; }
+      .abu_banner_left a h3 {
+        font-size: 2rem; }
+    .abu_banner_left-heading {
+      padding: 20px 0;
+      color: #fff; }
+      .abu_banner_left-heading h1 {
+        font-size: 4rem; }
+      .abu_banner_left-heading p {
+        width: 40%;
+        font-size: 1.2rem; }
+    .abu_banner_right img {
+      width: 100%; }
+  .abu_story {
+    padding-top: 50px; }
+    .abu_story_item {
+      padding: 40px 0; }
+      .abu_story_item-title {
+        color: #fff; }
+        .abu_story_item-title h1 {
+          font-size: 4rem;
+          font-weight: 700; }
+        .abu_story_item-title a {
+          font-size: 1.4rem;
+          font-weight: 600;
+          margin-left: 2px;
+          color: #c1c1c1c3; }
+      .abu_story_item-image img {
+        width: 100%; }
+
+.topbar_content-right .login_option, #home-page section.slide-show .slide_item-image, #home-page section.slide-show .slide_item-image-box, #home-page section.slide-show .current-slide_item, #home-page section.itd_np div, #home-page section.itd_np div a, .cart .not_login-ntf, .product-detail_image div, .box_edit_form, .box_edit_form .edit_form, .box_edit_form .edit_form_input, .login, .login_form_content, .login_form_content-btn button, .login_form_content-btn a, .register, .register_form_content, .register_form_content-btn button, .register_form_content-btn a, .info_content, #admin .sidebar_item-link, #admin .create_product {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+header .header_content, .search_box, .search_box-input, .abu_banner_left a, .login_form_content-heading, .register_form_content-heading {
+  display: flex;
+  align-items: center; }
+
+#admin #admin_product {
+  display: flex;
+  justify-content: center; }
+
+#to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #0000009c;
+  color: #fff;
+  transition: all .5s;
+  opacity: 0; }
+
+.product-detail {
+  margin: 50px auto; }
+  .product-detail input {
+    transform: scale(0);
+    width: 0; }
+  .product-detail label {
+    padding: 5px;
+    margin: 5px auto; }
+  .product-detail input[type="radio"] {
+    transform: scale(1);
+    width: auto; }
+  .product-detail_image div {
+    width: 150px;
+    aspect-ratio: 4/1;
+    inset: 20px auto auto 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    color: #2f2e2e;
+    font-size: 1.4rem; }
+    .product-detail_image div i {
+      margin-right: 8px; }
+  .product-detail_image img {
+    border-radius: 5px; }
+  .product-detail_infor {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #333; }
+    .product-detail_infor h1 {
+      font-size: 3.5rem;
+      color: #000; }
+    .product-detail_infor-btn {
+      padding: 30px 0; }
+      .product-detail_infor-btn button {
+        width: 100%;
+        height: 45px;
+        border-radius: 30px;
+        margin: 10px auto;
+        background-color: white;
+        border: 1px solid #33333355; }
+      .product-detail_infor-btn button:first-child {
+        background-color: #000;
+        color: white; }
+
+.topbar_content-right .login_option, #home-page section.slide-show .slide_item-image, #home-page section.slide-show .slide_item-image-box, #home-page section.slide-show .current-slide_item, #home-page section.itd_np div, #home-page section.itd_np div a, .cart .not_login-ntf, .product-detail_image div, .box_edit_form, .box_edit_form .edit_form, .box_edit_form .edit_form_input, .login, .login_form_content, .login_form_content-btn button, .login_form_content-btn a, .register, .register_form_content, .register_form_content-btn button, .register_form_content-btn a, .info_content, #admin .sidebar_item-link, #admin .create_product {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+header .header_content, .search_box, .search_box-input, .abu_banner_left a, .login_form_content-heading, .register_form_content-heading {
+  display: flex;
+  align-items: center; }
+
+#admin #admin_product {
+  display: flex;
+  justify-content: center; }
+
+#to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #0000009c;
+  color: #fff;
+  transition: all .5s;
+  opacity: 0; }
+
+.box_edit_form {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: aliceblue; }
+  .box_edit_form .edit_form {
+    width: 400px;
+    position: relative;
+    background-color: white;
+    height: 500px;
+    flex-direction: column; }
+    .box_edit_form .edit_form_input {
+      width: 90%;
+      display: flex;
+      flex-direction: column; }
+      .box_edit_form .edit_form_input input, .box_edit_form .edit_form_input select, .box_edit_form .edit_form_input textarea {
+        width: 100%;
+        height: 45px;
+        margin: 10px 0;
+        padding-left: 10px; }
+    .box_edit_form .edit_form button {
+      width: 90%;
+      height: 45px;
+      background-color: #000;
+      color: #fff; }
+
+.topbar_content-right .login_option, #home-page section.slide-show .slide_item-image, #home-page section.slide-show .slide_item-image-box, #home-page section.slide-show .current-slide_item, #home-page section.itd_np div, #home-page section.itd_np div a, .cart .not_login-ntf, .product-detail_image div, .box_edit_form, .box_edit_form .edit_form, .box_edit_form .edit_form_input, .login, .login_form_content, .login_form_content-btn button, .login_form_content-btn a, .register, .register_form_content, .register_form_content-btn button, .register_form_content-btn a, .info_content, #admin .sidebar_item-link, #admin .create_product {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+header .header_content, .search_box, .search_box-input, .abu_banner_left a, .login_form_content-heading, .register_form_content-heading {
+  display: flex;
+  align-items: center; }
+
+#admin #admin_product {
+  display: flex;
+  justify-content: center; }
+
+#to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #0000009c;
+  color: #fff;
+  transition: all .5s;
+  opacity: 0; }
+
+.login {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  inset: 0;
+  background-color: aliceblue;
+  z-index: 9999999; }
+  .login_form {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; }
+    .login_form_content {
+      flex-direction: column; }
+      .login_form_content-item {
+        width: 80%;
+        text-align: center;
+        padding: 20px 0; }
+      .login_form_content-heading a {
+        font-size: 1.2rem;
+        color: #333; }
+      .login_form_content-input input {
+        width: 100%;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        padding-left: 10px; }
+      .login_form_content-btn button, .login_form_content-btn a {
+        width: 100%;
+        height: 40px;
+        border-radius: 5px;
+        color: #fff; }
+      .login_form_content-btn #submit-login {
+        background-color: #000; }
+      .login_form_content-btn #go-to-singup {
+        background-color: #fff;
+        color: #000;
+        border: 1px solid #000; }
+
+.topbar_content-right .login_option, #home-page section.slide-show .slide_item-image, #home-page section.slide-show .slide_item-image-box, #home-page section.slide-show .current-slide_item, #home-page section.itd_np div, #home-page section.itd_np div a, .cart .not_login-ntf, .product-detail_image div, .box_edit_form, .box_edit_form .edit_form, .box_edit_form .edit_form_input, .login, .login_form_content, .login_form_content-btn button, .login_form_content-btn a, .register, .register_form_content, .register_form_content-btn button, .register_form_content-btn a, .info_content, #admin .sidebar_item-link, #admin .create_product {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+header .header_content, .search_box, .search_box-input, .abu_banner_left a, .login_form_content-heading, .register_form_content-heading {
+  display: flex;
+  align-items: center; }
+
+#admin #admin_product {
+  display: flex;
+  justify-content: center; }
+
+#to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #0000009c;
+  color: #fff;
+  transition: all .5s;
+  opacity: 0; }
+
+.register {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  inset: 0;
+  background-color: aliceblue;
+  z-index: 9999999; }
+  .register_form {
+    position: relative;
+    width: 600px;
+    height: 500px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; }
+    .register_form_content {
+      flex-direction: column; }
+      .register_form_content-item {
+        width: 80%;
+        text-align: center;
+        padding: 20px 0; }
+      .register_form_content-heading a {
+        font-size: 1.2rem;
+        color: #333; }
+      .register_form_content-input input {
+        width: 100%;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        padding-left: 10px; }
+      .register_form_content-item:nth-child(2) input {
+        width: 49%; }
+      .register_form_content-btn button, .register_form_content-btn a {
+        width: 100%;
+        height: 40px;
+        border-radius: 5px;
+        color: #fff; }
+      .register_form_content-btn #submit-register {
+        background-color: #fff;
+        border: 1px solid #000;
+        color: #000; }
+      .register_form_content-btn #go-to-singup {
+        background-color: #000; }
+
+.topbar_content-right .login_option, #home-page section.slide-show .slide_item-image, #home-page section.slide-show .slide_item-image-box, #home-page section.slide-show .current-slide_item, #home-page section.itd_np div, #home-page section.itd_np div a, .cart .not_login-ntf, .product-detail_image div, .box_edit_form, .box_edit_form .edit_form, .box_edit_form .edit_form_input, .login, .login_form_content, .login_form_content-btn button, .login_form_content-btn a, .register, .register_form_content, .register_form_content-btn button, .register_form_content-btn a, .info_content, #admin .sidebar_item-link, #admin .create_product {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+header .header_content, .search_box, .search_box-input, .abu_banner_left a, .login_form_content-heading, .register_form_content-heading {
+  display: flex;
+  align-items: center; }
+
+#admin #admin_product {
+  display: flex;
+  justify-content: center; }
+
+#to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #0000009c;
+  color: #fff;
+  transition: all .5s;
+  opacity: 0; }
+
+.info_heading {
+  width: 100%;
+  background-color: black; }
+  .info_heading div {
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .info_heading div h1 {
+      color: #fff; }
+    .info_heading div img {
+      height: 110%; }
+
+.info_content {
+  flex-direction: column; }
+  .info_content_name {
+    padding: 20px 0; }
+    .info_content_name i {
+      padding: 20px;
+      margin-right: 10px;
+      color: #fff;
+      border-radius: 50%;
+      background-color: #000; }
+    .info_content_name div h2 {
+      font-size: 1.8rem; }
+  .info_content_form {
+    width: 550px; }
+    .info_content_form-item {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0; }
+      .info_content_form-item label {
+        font-size: 1.2rem;
+        font-weight: 600; }
+      .info_content_form-item input {
+        width: 80%;
+        height: 45px;
+        padding-left: 10px;
+        font-size: 1.5rem;
+        font-weight: 600; }
+      .info_content_form-item button {
+        width: 100px;
+        height: 45px;
+        border-radius: 5px;
+        background-color: #000;
+        color: #fff; }
+    .info_content_form-item:last-child {
+      justify-content: end; }
+
+#admin {
+  width: 100%;
+  position: relative; }
+  #admin .sidebar {
+    width: 20%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    border-radius: 0 15px 15px 0;
+    padding: 30px 0;
+    background-color: #000000;
+    border-right: 2px solid #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    #admin .sidebar_avatar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 0; }
+      #admin .sidebar_avatar i {
+        font-size: 2rem;
+        padding: 10px;
+        border-radius: 50%;
+        background-color: #ffffff; }
+      #admin .sidebar_avatar h1 {
+        color: #fff; }
+    #admin .sidebar_item {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 20px; }
+      #admin .sidebar_item-link {
+        width: 95%;
+        padding: 10px 0;
+        margin: 5px auto;
+        color: #fff;
+        background-color: #000;
+        border-radius: 5px;
+        font-size: 1.5rem; }
+        #admin .sidebar_item-link i {
+          margin-right: 10px; }
+  #admin .content {
+    width: 80%;
+    position: absolute;
+    right: 0;
+    background-color: #000000;
+    min-height: 100vh; }
+  #admin #admin_product table {
+    margin: 30px auto;
+    width: 90%;
+    height: fit-content; }
+    #admin #admin_product table tr {
+      text-align: center;
+      color: #fff;
+      height: 80px; }
+      #admin #admin_product table tr th {
+        font-size: 1.5rem; }
+      #admin #admin_product table tr td {
+        font-size: 1.4rem; }
+        #admin #admin_product table tr td img {
+          padding: 10px 0;
+          width: 100px; }
+        #admin #admin_product table tr td a {
+          cursor: pointer;
+          margin: 0 5px;
+          color: #fff; }
+  #admin #admin_product .create_product-btn {
+    width: 80%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 50px;
+    background-color: aquamarine;
+    text-align: center; }
+    #admin #admin_product .create_product-btn button {
+      width: 100%;
+      height: 100%;
+      font-size: 1.5rem;
+      font-weight: 700;
+      background-color: #fff; }
+      #admin #admin_product .create_product-btn button i {
+        margin-right: 5px; }
+  #admin #admin_product table,
+  #admin #admin_product th,
+  #admin #admin_product td {
+    border: 1px solid #fff; }
+  #admin .create_product {
+    visibility: hidden;
+    transition: 0.5s;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: #393939cb;
+    z-index: 999; }
+    #admin .create_product_form {
+      width: 400px;
+      background-color: #ffffff;
+      border-radius: 5px; }
+      #admin .create_product_form .close_create_form-box {
+        width: 100%;
+        text-align: end; }
+        #admin .create_product_form .close_create_form-box button {
+          width: 35px;
+          aspect-ratio: 1/1;
+          font-size: 1.5rem; }
+      #admin .create_product_form-input {
+        width: 90%;
+        margin: 30px auto;
+        display: flex;
+        flex-direction: column; }
+        #admin .create_product_form-input_item {
+          padding: 20px 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center; }
+          #admin .create_product_form-input_item label {
+            font-size: 1.5rem; }
+          #admin .create_product_form-input_item input,
+          #admin .create_product_form-input_item select {
+            width: 80%;
+            height: 40px;
+            padding-left: 10px; }
+        #admin .create_product_form-input input[name*="size"] {
+          width: 0;
+          height: 0;
+          transform: scale(0); }
+        #admin .create_product_form-input_btn {
+          text-align: end; }
+          #admin .create_product_form-input_btn button {
+            width: 80px;
+            height: 40px;
+            background-color: #aa011d;
+            color: #fff;
+            border-radius: 5px; }

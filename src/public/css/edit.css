@@ -1,0 +1,42 @@
+.box_edit_form, .box_edit_form .edit_form, .box_edit_form .edit_form_input {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+#to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #0000009c;
+  color: #fff;
+  transition: all .5s;
+  opacity: 0; }
+
+.box_edit_form {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: aliceblue; }
+  .box_edit_form .edit_form {
+    width: 400px;
+    position: relative;
+    background-color: white;
+    height: 500px;
+    flex-direction: column; }
+    .box_edit_form .edit_form_input {
+      width: 90%;
+      display: flex;
+      flex-direction: column; }
+      .box_edit_form .edit_form_input input, .box_edit_form .edit_form_input select, .box_edit_form .edit_form_input textarea {
+        width: 100%;
+        height: 45px;
+        margin: 10px 0;
+        padding-left: 10px; }
+    .box_edit_form .edit_form button {
+      width: 90%;
+      height: 45px;
+      background-color: #000;
+      color: #fff; }

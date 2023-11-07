@@ -1,0 +1,70 @@
+@import 'var.scss';
+.info{
+    &_heading{
+        width: 100%;
+        background-color: rgb(0, 0, 0);
+        div{
+            height: 150px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            h1{
+                color: $whiteColor;
+            }
+            img{
+                height: 110%; 
+            } 
+        }
+    }
+    &_content{
+        @extend %center-flex; 
+        flex-direction: column;
+        &_name{
+            padding: 20px 0;
+            i{
+                padding: 20px;
+                margin-right: 10px;
+                color: $whiteColor;
+                border-radius: $circle;
+                background-color: $blackColor;
+            }
+            div{
+                h2{
+                    font-size: 1.8rem;
+                }
+            }
+        }
+        &_form{
+            width: 550px;
+            &-item{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center; 
+                padding: 10px 0;
+                label{
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                }
+                input{
+                    width: 80%;
+                    height: 45px;
+                    padding-left: 10px;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                }
+                button{
+                    width: 100px;
+                    height: 45px;
+                    border-radius: $radius;
+                    background-color: $blackColor;
+                    color: $whiteColor; 
+                }
+            }
+            &-item:last-child{
+                justify-content: end;
+            }
+        }
+        
+    }
+}

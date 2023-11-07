@@ -1,0 +1,81 @@
+@import "var.scss";
+
+.abu {
+    background-color: #1f1f1f;
+    border-bottom: 1px solid $whiteColor;
+
+    &_banner {
+        transform: translateY(-$navHeight);
+        background-color: $blackColor;
+        padding-top: $navHeight;
+
+        &_left {
+            a {
+                @extend %center-align;
+                color: $whiteColor;
+
+                span {
+                    padding: 6px 8px;
+                    border-radius: $circle;
+                    border: 1px solid $whiteColor;
+                    padding-right: 10px;
+                    margin-right: 10px;
+                }
+
+                h3 {
+                    font-size: 2rem;
+                }
+            }
+
+            &-heading {
+                padding: 20px 0;
+                color: $whiteColor;
+
+                h1 {
+                    font-size: 4rem;
+                }
+
+                p {
+                    width: 40%;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        &_right {
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    &_story {
+        padding-top: 50px;
+
+        &_item {
+            padding: 40px 0;
+
+            &-title {
+                color: #fff;
+
+                h1 {
+                    font-size: 4rem;
+                    font-weight: 700;
+                }
+
+                a {
+                    font-size: 1.4rem;
+                    font-weight: 600;
+                    margin-left: 2px;
+                    color: #c1c1c1c3;
+                }
+            }
+
+            &-image {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

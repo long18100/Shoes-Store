@@ -1,0 +1,47 @@
+<div id="admin">
+    <div class="sidebar">
+        <div class="sidebar_avatar">
+            <i class="fa-solid fa-user"></i>
+            <h1>Admin</h1>
+        </div>
+        <div class="sidebar_item">
+            <a href="/admin" class="sidebar_item-link active">
+                <i class="fa fa-th-large"></i>
+                Products</a>
+            <a href="/adminCustomer" class="sidebar_item-link" style="background: #ffffff; color:#000000">
+                <iclass="fa-regular fa-file-lines"></i>
+                    Customers</a>
+            <a href="/adminOrder" class="sidebar_item-link">
+                <iclass="fa-solid fa-address-book"></i>
+                    Orders</a>
+        </div>
+        <div class="sidebar_item">
+            <a href="/" class="sidebar_item-link"><i class="fa-solid fa-right-from-bracket"></i>Log out</a>
+        </div>
+    </div>
+    <section class="content active" id="admin_product">
+        <table>
+            <tr>
+                <th>Order number</th>
+                <th>Name</th>
+                <th>User name</th>
+                <th>Phone number</th>
+                <th>Address</th>
+            </tr>
+            {{#each users}}
+            <tr>
+                <td>{{sum @index 1}}</td>
+                <td>{{this.name}}</td>
+                <td>{{this.username}}</td>
+                <td>{{this.phoneNumber}}</td>
+                <td>{{this.address}}</td>
+            </tr>
+            {{/each}}
+        </table>
+    </section>
+</div>
+<script>
+    document.querySelector('header').style.display = 'none';
+    document.querySelector('.topbar').style.display = 'none';
+    document.querySelector('footer').style.display = 'none';
+</script>

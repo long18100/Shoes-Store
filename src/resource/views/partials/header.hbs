@@ -1,0 +1,125 @@
+<div class="topbar container-fluid">
+    <div class="topbar_content container">
+        <div class="row d-flex align-items-center">
+            <div class="topbar_content-left col-6">Free shipping for standard order over $100</div>
+            <div class="topbar_content-right col-6">
+                <a href="/" class="topbar_content-right-link">Help & FAQs</a>
+                <a href="/login" id="login_link" class="topbar_content-right-link">{{user.name}}<a>
+                <div class="login_option">
+                    <a href="/info">My info</a>
+                    <a href="/?_logout=true">Log out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<header class="container-fluid p-0">
+    <div class="header container">
+        <div class="header_content row">
+            <div class="header_content-logo col-3">
+                <a href="/">
+                    <h1 class=""><b>DRACO</b> STORE</h1>
+                </a>
+            </div>
+            <div class="header_content-nav col-6">
+                <div class="d-flex">
+                    <a class="link_page" href="/">Home</a>
+                    <a class="link_page" href="/men">Men</a>
+                    <a class="link_page" href="/women">Women</a>
+                    <a class="link_page" href="/kid">Kids</a>
+                    <a class="link_page" href="/aboutUs">About Us</a>
+                </div>
+            </div>
+            <div class="header_content-btn col-3">
+                <a id="show_search-form">
+                    <i class="fa-solid fa-magnifying-glass fa-2xl"></i>
+                </a>
+                <a href="/cart">
+                    <i class="fa-solid fa-cart-shopping fa-2xl"></i>
+                    <span class="position-absolute">{{user.productsInCart.length}}</span>
+                </a>
+                <a href="/">
+                    <i class="fa-regular fa-heart fa-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="search">
+    <form class="search_box" method="post" action="/products/search">
+        <button type="button" id="hide_search-form">Cancel</button>
+        <div class="search_box-input">
+            <input id="search-input" name="name" type="text" placeholder="Search">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="popular_search">
+            <h3>Popular Search Terms:</h3>
+            <a href="/products/Nike%20Air%20Force%201">Nike Air Force 1</a>
+            <a href="/products/Jordan%20Retro%206%20G">Jordan Retro 6 G</a>
+            <a href="/products/Nike%20Air%20Max%20SYSTM">Nike Air Max SYSTM</a>
+        </div>
+    </form>
+</div>
+<style>
+    .active_link {
+        border-bottom: 2px solid #000;
+    }
+</style>
+<script>
+    let header = document.querySelector('header')
+    document.addEventListener('scroll', (event) => {
+        if (window.scrollY < 20) {
+            header.style.background = "transparent";
+            header.style.animation = "none"
+            header.style.boxShadow = "none"
+        } else {
+            header.style.background = "#fff";
+            header.style.animation = "throw .3s linear forwards"
+            header.style.boxShadow = "2px 0px 10px #33333338"
+        }
+    })
+
+    var currentURL = window.location.href;
+    var link = document.querySelectorAll('.link_page');
+    link.forEach((e) => {
+        if (e.href == (currentURL)) {
+            e.classList.add('active_link');
+        }
+        if (currentURL == "http://localhost:3000/aboutUs") {
+            document.querySelector('header').style.background = "#fff"
+            document.querySelector('header').style.filter = "invert(100%)"
+            document.querySelector('.topbar').style.display = "none"
+        } else {
+            document.querySelector('header').style.filter = "none"
+        }
+    })
+    if (currentURL.includes('edit') || currentURL.includes('login') || currentURL.includes('register')) {
+        document.querySelector('header').style.display = 'none'
+        document.querySelector('.topbar').style.display = 'none'
+    }
+    let showSearch = document.getElementById('show_search-form')
+    let hideSearch = document.getElementById('hide_search-form')
+    let searchForm = document.querySelector('.search')
+    let searchInput = document.getElementById('search-input')
+    showSearch.addEventListener('click', () => {
+        searchForm.style.transform = 'translateY(0)'
+        searchForm.style.background = 'rgba(74, 74, 75, 0.197)'
+        searchForm.style.opacity = 1
+        searchInput.focus()
+    })
+    hideSearch.addEventListener('click', () => {
+        searchForm.style.transform = 'translateY(-100%)'
+        searchForm.style.background = 'transparent'
+        searchForm.style.opacity = 0
+    })
+    let contentLoginLink = document.getElementById('login_link')
+    
+    if (contentLoginLink.innerHTML === "My account" || contentLoginLink.innerHTML === "") {
+        contentLoginLink.href = "/login"
+        contentLoginLink.innerHTML = "My account"
+        
+
+    }else{
+        contentLoginLink.href = "/info"
+    }
+</script>

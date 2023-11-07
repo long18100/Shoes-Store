@@ -1,0 +1,63 @@
+<section class="container-fluid product-detail position-relative">
+    <form method="post" class="container" action="/products/create">
+        <div class="row">
+            <div class="product-detail_image position-relative col-7">
+                <div class="position-absolute"><i class="fa-solid fa-star"></i> Hightly Rated</div>
+                <img class="" src="{{product.image}}" alt="">
+                <input type="text" name="image" value="{{product.image}}">
+            </div>
+            <div class="product-detail_infor position-relative col-5">
+                <h1>{{product.name}}</h1>
+                <span>{{convertToString product.price}} VND</span>
+                <input name="name" value="{{product.name}}" type="text">
+                <input type="number" name="price" value="{{product.price}}">
+                <div class="product-detail_infor-size">
+                    <div class="row">
+                        {{#each product.size}}
+                        <div class="col-4 p-0">
+                            <label for="size-{{this}}">{{this}}</label>
+                            <input value="{{this}}" type="radio" name="size" id="size-{{this}}">
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="product-detail_infor-btn row">
+                    <button id="addToBag" type="button">Add to Bag</button>
+                    <button type="">Favourite <i class="fa-regular fa-heart"></i></button>
+                </div>
+                <h3 class="pb-5">Review(68)
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    </h5>
+                    <p>Quicker than 1, 2, 3—the original hoops shoe lets you step in and get going. Its EasyOn entry
+                        system gives you a hands-free experience, while crisp leather dons the cleanest colour for
+                        ultimate wearability. Yeah, it's everything you love and then some.</p>
+            </div>
+        </div>
+    </form>
+    <script>
+        let addToBag = document.getElementById("addToBag")
+        let radios = document.getElementsByName('size')
+        let boxSize = document.querySelector('.product-detail_infor-size')
+        addToBag.addEventListener('click', function (e) {
+            let sizes = document.getElementsByName('size');
+            let isSizeSelected = false;
+            for (let i = 0; i < sizes.length; i++) {
+                if (sizes[i].checked) {
+                    isSizeSelected = true;
+                    break;
+                }
+            }
+
+            if (!isSizeSelected) {
+                e.preventDefault(); // Prevent form submission
+                alert('Please select your shoe size!');
+            }else{
+                addToBag.type = 'submit'
+            }
+        });
+    </script>
+</section>

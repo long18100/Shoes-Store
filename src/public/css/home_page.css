@@ -1,0 +1,186 @@
+#home-page section.slide-show .slide_item-image, #home-page section.slide-show .slide_item-image-box, #home-page section.slide-show .current-slide_item, #home-page section.itd_np div, #home-page section.itd_np div a {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+#to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #0000009c;
+  color: #fff;
+  transition: all .5s;
+  opacity: 0; }
+
+#home-page {
+  margin-top: -60px; }
+  #home-page section.slide-show {
+    width: 100%;
+    position: relative;
+    height: calc(100vh);
+    background: url(/images/masks/bg_sl.svg) #c3c4c4;
+    background-size: 100% 90%;
+    background-repeat: no-repeat;
+    padding-bottom: 60px; }
+    #home-page section.slide-show:hover > .directional {
+      opacity: 1; }
+    #home-page section.slide-show .slide {
+      position: relative;
+      width: max-content;
+      height: calc(100vh);
+      overflow: hidden;
+      transition: all .5s ease-in-out; }
+      #home-page section.slide-show .slide_item {
+        transition: 1s;
+        height: 100%;
+        display: flex; }
+        #home-page section.slide-show .slide_item_description {
+          width: 50%;
+          margin-top: 15%; }
+          #home-page section.slide-show .slide_item_description-info {
+            width: 100%; }
+            #home-page section.slide-show .slide_item_description-info h1 {
+              width: fit-content;
+              font-size: 7rem;
+              font-weight: 1000;
+              border-bottom: 3px solid #000000; }
+            #home-page section.slide-show .slide_item_description-info span {
+              width: 50px;
+              text-align: justify; }
+          #home-page section.slide-show .slide_item_description-btn {
+            margin-top: 20px;
+            display: flex; }
+            #home-page section.slide-show .slide_item_description-btn a {
+              font-weight: 500;
+              padding: 10px 20px;
+              margin-right: 10px;
+              border-radius: 5px;
+              color: #fff;
+              background: #000000; }
+            #home-page section.slide-show .slide_item_description-btn a:last-child {
+              background: #fff;
+              color: #000; }
+        #home-page section.slide-show .slide_item-image {
+          width: 50%;
+          justify-content: end; }
+          #home-page section.slide-show .slide_item-image-box {
+            height: 100%; }
+            #home-page section.slide-show .slide_item-image-box img {
+              width: 100%;
+              object-fit: cover; }
+    #home-page section.slide-show .directional {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      justify-content: space-between;
+      transition: .5s;
+      opacity: 0; }
+      #home-page section.slide-show .directional button {
+        width: 40px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        border: 1px solid #ffffff71;
+        margin: auto 20px;
+        background: transparent;
+        color: #fff; }
+    #home-page section.slide-show .current-slide {
+      width: 100%;
+      position: absolute;
+      bottom: 10%; }
+      #home-page section.slide-show .current-slide_item {
+        width: 100px;
+        aspect-ratio: 3/2;
+        margin-right: 10px;
+        border-radius: 5px;
+        cursor: pointer; }
+        #home-page section.slide-show .current-slide_item img {
+          object-fit: contain;
+          width: 100%;
+          transition: all .5s; }
+      #home-page section.slide-show .current-slide_item.active-slide img {
+        transform: scale(1.2);
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.897)); }
+  #home-page section.itd_np {
+    padding: 50px 0; }
+    #home-page section.itd_np div {
+      flex-direction: column;
+      width: 50%; }
+      #home-page section.itd_np div span {
+        font-size: 1.5rem;
+        font-weight: 500; }
+      #home-page section.itd_np div h1 {
+        font-size: 7rem;
+        font-weight: 1000; }
+      #home-page section.itd_np div a {
+        display: block;
+        width: 90px;
+        height: 40px;
+        margin: 10px 0;
+        border-radius: 20px;
+        background: #000;
+        color: #fff;
+        font-weight: 500; }
+  #home-page section.banner-box .banner {
+    padding-bottom: 50px; }
+    #home-page section.banner-box .banner_item {
+      height: 400px; }
+      #home-page section.banner-box .banner_item_box {
+        height: 100%;
+        background-position: unset;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; }
+        #home-page section.banner-box .banner_item_box_heading {
+          height: 30%;
+          padding-left: 20px; }
+          #home-page section.banner-box .banner_item_box_heading h2 {
+            font-size: 1.6rem; }
+          #home-page section.banner-box .banner_item_box_heading span {
+            font-size: 1.2rem;
+            color: #333333bb; }
+        #home-page section.banner-box .banner_item_box_btn {
+          padding-left: 20px; }
+          #home-page section.banner-box .banner_item_box_btn a {
+            padding: 10px 30px;
+            background: #272727;
+            color: #fff;
+            border-radius: 5px; }
+  #home-page section.feature {
+    padding: 50px 0; }
+    #home-page section.feature .feature_item {
+      position: relative; }
+      #home-page section.feature .feature_item a {
+        height: 630px;
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat; }
+        #home-page section.feature .feature_item a .feature_item_heading {
+          color: #000;
+          position: absolute;
+          inset: auto auto 30px 30px; }
+          #home-page section.feature .feature_item a .feature_item_heading h1 {
+            font-size: 3.5rem; }
+          #home-page section.feature .feature_item a .feature_item_heading button {
+            width: 80px;
+            height: 35px;
+            margin-top: 10px;
+            border-radius: 20px;
+            background: #000;
+            color: #fff;
+            font-weight: 600;
+            transition: all .3s; }
+          #home-page section.feature .feature_item a .feature_item_heading button:hover {
+            filter: invert(100%); }
+    #home-page section.feature .feature_item:last-child .feature_item_heading {
+      color: #fff;
+      position: absolute;
+      inset: auto auto 30px 20px; }
+      #home-page section.feature .feature_item:last-child .feature_item_heading button {
+        background: #fff;
+        color: #000; }

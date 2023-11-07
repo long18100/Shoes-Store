@@ -1,0 +1,61 @@
+#to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #0000009c;
+  color: #fff;
+  transition: all .5s;
+  opacity: 0; }
+
+footer {
+  min-height: 320px;
+  background: #111111;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  footer .footer_item {
+    padding-top: 40px; }
+    footer .footer_item h1 {
+      color: #fff;
+      font-size: 1.5rem; }
+    footer .footer_item-content {
+      display: flex;
+      flex-direction: column; }
+      footer .footer_item-content a,
+      footer .footer_item-content p {
+        color: #bebebe;
+        font-size: 1.3rem;
+        line-height: 30px; }
+      footer .footer_item-content p {
+        width: 75%; }
+      footer .footer_item-content .social-contacts {
+        padding-top: 15px; }
+        footer .footer_item-content .social-contacts a {
+          margin-right: 10px; }
+      footer .footer_item-content input {
+        width: 90%;
+        height: 30px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        padding-left: 10px;
+        margin-top: 20px; }
+      footer .footer_item-content button {
+        width: 100px;
+        height: 30px;
+        border-radius: 5px;
+        background-color: #ff7a3c;
+        color: #fff;
+        margin-top: 20px; }
+  footer .pay-method_item {
+    width: 40px;
+    aspect-ratio: 2/1;
+    background-size: 90%;
+    background-position: center;
+    border-radius: 2px;
+    margin: 20px 5px; }
+  footer .pay-method .copyright {
+    color: #bebebe87;
+    margin: 5px 0; }

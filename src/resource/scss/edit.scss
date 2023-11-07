@@ -1,0 +1,37 @@
+@import 'var.scss';
+
+.box_edit_form {
+    position: fixed; 
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: aliceblue;
+    @extend %center-flex;
+    .edit_form {
+        width: 400px;
+        position: relative;
+        background-color: rgb(255, 255, 255);
+        height: 500px;
+        @extend %center-flex;
+        flex-direction: column;
+        &_input {
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            @extend %center-flex;
+            input, select, textarea {
+                width: 100%;
+                height: 45px;
+                margin: 10px 0;
+                padding-left: 10px;
+            }
+
+        }
+        button{
+            width: 90%;
+            height: 45px;
+            background-color: $blackColor;
+            color: $whiteColor;
+        }
+    }
+}
