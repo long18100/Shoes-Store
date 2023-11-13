@@ -1,44 +1,41 @@
 const { response } = require('express')
-const { mongooseToObject } = require('../../util/mongoose')
 const Product = require('../models/product')
 const User = require('../models/user')
 class ProductController {
 
   index(req, res) {
-    
+
     res.render('products')
   }
   async show(req, res, next) {
     try {
-        const product = await Product.findOne({ name: req.params.slug }).lean();
-        const user = await User.findOne({curent: true}).lean();
-        res.render('show/product_detail', { product, user });
+      const product = await Product.findOne({ name: req.params.slug }).lean();
+      const user = await User.findOne({ curent: true }).lean();
+      res.render('show/product_detail', { product, user });
     } catch (error) {
-        next(error);
+      next(error);
     }
-}
+  }
   create(req, res, next) {
     const product = new Product(req.body)
-  
+
     User.findOneAndUpdate(
-      {curent: true},
+      { curent: true },
       { $push: { productsInCart: product } },
       { new: true }
     )
       .then(user => {
-        if(user){
+        if (user) {
           res.redirect(`/products`)
-        }else{
-          res.redirect(`/`)
+        } else {
+          res.redirect(`/cart`)
         }
       })
-      .catch(error => {
-        console.log(error);
-      });
+      .catch(next);
 
   }
   search(req, res, next) {
-    const productName = req.body.name; 
+    const productName = req.body.name;
     const regex = new RegExp(productName, 'i');
     Product.find({ name: regex })
       .then(products => {
@@ -47,6 +44,5 @@ class ProductController {
       })
   }
 }
-
 
 module.exports = new ProductController

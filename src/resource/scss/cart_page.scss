@@ -1,17 +1,19 @@
-@import 'var.scss';
-
 .cart {
-    min-height: 500px;
+    min-height: 400px;
     padding: 40px 0;
-    .not_login-ntf{
+
+    .not_login-ntf {
         @extend %center-flex;
-        height: 300px;
-        &_content{
+        height: 100px;
+
+        &_content {
             text-align: center;
-            h2{
+
+            h2 {
                 margin: 30px 0;
             }
-            a{
+
+            a {
                 padding: 15px 40px;
                 border-radius: 20px;
                 background-color: $blackColor;
@@ -19,6 +21,43 @@
             }
         }
     }
+
+    .empty_cart-ntf {
+        &-img {
+            @extend %center-flex;
+            background: rgba(124, 122, 122, 0.493);
+
+            img {
+                height: 200px;
+                mix-blend-mode: color-burn;
+            }
+        }
+
+        &-content {
+            @extend %center-flex;
+            flex-direction: column;
+            padding: 20px 0;
+
+            h1 {
+                margin: 10px 0;
+            }
+
+            span {
+                font-size: 1.4rem;
+            }
+
+            a {
+                @extend %center-flex;
+                margin: 10px 0;
+                width: 150px;
+                height: 40px;
+                border-radius: 20px;
+                background-color: $blackColor;
+                color: $whiteColor;
+            }
+        }
+    }
+
     &-table {
 
         tr {
@@ -33,6 +72,11 @@
             td {
                 font-size: 1.4rem;
                 font-weight: 500;
+
+                span {
+                    font-size: 1.6rem;
+                    color: red;
+                }
 
                 a {
                     color: rgb(0, 0, 0);
@@ -58,7 +102,8 @@
 
                 font-size: 1.8rem;
 
-                button {
+                a {
+                    @extend %center-flex;
                     width: 100px;
                     height: 45px;
                     margin: 5px 0;

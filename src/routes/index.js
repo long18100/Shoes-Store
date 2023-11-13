@@ -10,7 +10,9 @@ const adminOrderRouter = require('./admin_order')
 const loginRouter = require('./login')
 const registerRouter = require('./register')
 const infoRouter = require('./info')
+const paymentRouter = require('./payment')
 function route(app) {
+    
     app.use('/products', productRouter)
     app.use('/men', menRouter)
     app.use('/women', womenRouter)
@@ -22,6 +24,7 @@ function route(app) {
     app.use('/login', loginRouter)
     app.use('/register', registerRouter)
     app.use('/info', infoRouter)
+    app.use('/payment', paymentRouter)
 
     app.use('/', siteRouter)
 }

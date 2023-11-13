@@ -3,7 +3,6 @@ const router = express.Router()
 
 const siteController = require('../app/controllers/SiteController')
 
-//router.use('/:slug', siteController.show)
 router.get('/', siteController.home)
 router.get('/products', siteController.shop)
 router.get('/men', siteController.men)
@@ -17,4 +16,6 @@ router.get('/register', siteController.register)
 router.get('/cart', siteController.cart)
 router.get('/aboutUs', siteController.aboutUs)
 router.get('/info', siteController.info)
+router.get('/payment', siteController.payment)
+
 module.exports = router;

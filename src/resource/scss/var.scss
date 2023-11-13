@@ -1,5 +1,3 @@
-
-
 // Color
 $mainColor: #000000;
 
@@ -31,11 +29,11 @@ $topbarHeight: 20px;
 $navHeight: 60px;
 
 //Footer
-$footerHeight:320px;
+$footerHeight: 320px;
 //Home Page
 $slideHeight: calc(100vh);
 
-$bannerHeight: 400px; 
+$bannerHeight: 400px;
 
 %center {
     position: absolute;
@@ -43,19 +41,23 @@ $bannerHeight: 400px;
     height: 50%;
     transform: translate(-50%, -50%);
 }
+
 %center-flex {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 %center-align {
     display: flex;
     align-items: center;
 }
-%center-justify{
+
+%center-justify {
     display: flex;
     justify-content: center;
 }
+
 @mixin box($w, $h, $bg, $br, $cl) {
     width: $w;
     height: $h;
@@ -63,14 +65,15 @@ $bannerHeight: 400px;
     color: $cl;
     border-radius: $br;
 }
-#to-top{
+
+#to-top {
     position: fixed;
     right: 20px;
     bottom: 20px;
     padding: 10px;
     border-radius: $circle;
     background-color: #0000009c;
-    color: $whiteColor; 
+    color: $whiteColor;
     transition: all .5s;
     opacity: 0;
 }

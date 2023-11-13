@@ -5,7 +5,7 @@ const handlebars = require("express-handlebars");
 const app = express();
 const port = 3000;
 
-var methodOverride = require('method-override')
+const methodOverride = require('method-override')
 
 const route = require('./routes/index')
 const db = require('./config/db')
@@ -29,19 +29,28 @@ app.engine('.hbs', handlebars.engine({
   extname: '.hbs',
   helpers: {
     sum: (a, b) => a + b,
+    countQuantity: (arr) => {
+      let quantity = 0;
+      if (arr) {
+        arr.forEach((item) => {
+          quantity += item.quantity
+        })
+        return quantity;
+      }
+    },
     totalMoney: (arr) => {
       let total = 0
-      if(arr){
+      if (arr) {
         arr.forEach(element => {
-          total += element.price
+          total += element.price * element.quantity
         });
         return total;
-      }else{
+      } else {
         console.log("Bạn chưa đăng nhập")
       }
     },
     convertToString: (num) => new Intl.NumberFormat().format(num),
-
+    multipli: (a, b) => a * b,
   }
 }));
 app.set('view engine', '.hbs');

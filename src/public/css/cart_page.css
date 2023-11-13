@@ -1,4 +1,4 @@
-.cart .not_login-ntf {
+.cart .not_login-ntf, .cart .empty_cart-ntf-img, .cart .empty_cart-ntf-content, .cart .empty_cart-ntf-content a, .cart-table tr:last-child td a {
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -15,10 +15,10 @@
   opacity: 0; }
 
 .cart {
-  min-height: 500px;
+  min-height: 400px;
   padding: 40px 0; }
   .cart .not_login-ntf {
-    height: 300px; }
+    height: 100px; }
     .cart .not_login-ntf_content {
       text-align: center; }
       .cart .not_login-ntf_content h2 {
@@ -28,6 +28,25 @@
         border-radius: 20px;
         background-color: #000;
         color: #fff; }
+  .cart .empty_cart-ntf-img {
+    background: rgba(124, 122, 122, 0.493); }
+    .cart .empty_cart-ntf-img img {
+      height: 200px;
+      mix-blend-mode: color-burn; }
+  .cart .empty_cart-ntf-content {
+    flex-direction: column;
+    padding: 20px 0; }
+    .cart .empty_cart-ntf-content h1 {
+      margin: 10px 0; }
+    .cart .empty_cart-ntf-content span {
+      font-size: 1.4rem; }
+    .cart .empty_cart-ntf-content a {
+      margin: 10px 0;
+      width: 150px;
+      height: 40px;
+      border-radius: 20px;
+      background-color: #000;
+      color: #fff; }
   .cart-table tr {
     text-align: center;
     border-bottom: 1px solid #6a6a6a;
@@ -37,6 +56,9 @@
     .cart-table tr td {
       font-size: 1.4rem;
       font-weight: 500; }
+      .cart-table tr td span {
+        font-size: 1.6rem;
+        color: red; }
       .cart-table tr td a {
         color: black; }
       .cart-table tr td input {
@@ -50,7 +72,7 @@
     background-color: #000000; }
     .cart-table tr:last-child td {
       font-size: 1.8rem; }
-      .cart-table tr:last-child td button {
+      .cart-table tr:last-child td a {
         width: 100px;
         height: 45px;
         margin: 5px 0;

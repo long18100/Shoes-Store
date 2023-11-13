@@ -23,6 +23,7 @@
         <table>
             <tr>
                 <th>Order</th>
+                <th>Total amount</th>
                 <th>Customer</th>
                 <th>Phone number</th>
                 <th>Address</th>
@@ -30,28 +31,24 @@
             </tr>
             {{#each users}}
             <tr>
-                <td class="text-start" style="flex-direction: column;">
-                    <div class="d-flex">
-                        <div class="d-flex justify-content-between align-items-center" style="width: 100%;">
-                            {{#each this.Order}}
-                            <div class="pr-5" style="flex-direction: column;">
-                                {{#each this.name}}
-                                <h3>{{this}}:</h3>
-                                {{/each}}
-                            </div>
-                            <div class="" style="flex-direction: column;">
-                                {{#each this.size}}
-                                <h3>Size:{{this}}</h3>
-                                {{/each}}
-                            </div>
-                            <div class="">
-                                <h3>{{this.totalMoney}} VND</h3>
-                            </div>
-                            {{/each}}
-
-                        </div>
-                    </div>
+                <td>
+                    <table style=" width:fit-content; height: fit-content;">
+                        <tr style=" width:fit-content; height: fit-content;"
+                            style=" width:fit-content; height: fit-content;">
+                            <th>Name</th>
+                            <th>Size</th>
+                            <th>Quantity</th>
+                        </tr>
+                        {{#each this.Order}}
+                        <tr style=" width:fit-content; height: fit-content;">
+                            <td>{{this.name}}</td>
+                            <td>{{this.size}}</td>
+                            <td>{{this.quantity}}</td>
+                        </tr>
+                        {{/each}}
+                    </table>
                 </td>
+                <td>{{convertToString (totalMoney this.Order)}}VND</td>
                 <td>{{this.name}}</td>
                 <td>{{this.phoneNumber}}</td>
                 <td>{{this.address}}</td>

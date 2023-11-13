@@ -1,0 +1,78 @@
+.payment {
+    margin: 20px 0;
+
+    label {
+        font-size: 1.2rem;
+    }
+
+    label.heading_payment {
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+
+    &_item {
+        &_cus-infor {
+            display: flex;
+            flex-direction: column;
+
+            &-input {
+                margin: 10px 0;
+                display: flex;
+                flex-direction: column;
+
+                input {
+                    width: 90%;
+                    height: 40px;
+                    font-size: 1.6rem;
+                    padding-left: 15px;
+                    border-radius: $radius;
+                    outline: none;
+                }
+            }
+        }
+
+        &_payments {
+            div {
+                display: flex;
+                align-items: center;
+
+                label {
+                    cursor: pointer;
+                }
+
+                input {
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        &_btn {
+            button {
+                width: 90%;
+                height: 40px;
+                font-size: 1.6rem;
+                color: $whiteColor;
+                background: $blackColor;
+                border-radius: $radius;
+                margin: 20px 0;
+            }
+        }
+
+        ul {
+            li {
+                width: 70%;
+                height: 90px;
+                padding: 15px 0;
+
+                h4 {
+                    margin-right: 15px;
+                }
+
+                img {
+                    height: 100%;
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+}

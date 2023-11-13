@@ -7,14 +7,15 @@
                     <th>Name</th>
                     <th>Price</th>
                     <th>Size</th>
+                    <th>Quantity</th>
+                    <th>Total amount</th>
                     <th>Delete</th>
                 </tr>
                 {{#each user.productsInCart}}
-                <class="d-flex justify-content-center align-items-center">
-                    
+                <tr class="">
                     <td>{{sum @index 1}}</td>
-                    <td>{{this.name}} 
-                        <input name="name" value="{{this.name}}" type="text"> 
+                    <td>{{this.name}}
+                        <input name="name" value="{{this.name}}" type="text">
                     </td>
                     <td>{{convertToString this.price}} VND
                         <input name="price" value="{{this.price}}" type="text" id="">
@@ -22,16 +23,25 @@
                     <td>{{this.size}}
                         <input name="size" value="{{this.size}}" type="text" id="">
                     </td>
-                    <td><a data-id="{{this._id}}" data-bs-toggle="modal" data-bs-target="#deleteProductForm" href=""><i class="fa-solid fa-trash-can fa-xl"></i></a></td>
-                    </tr>
-                    {{/each}}
-                    <tr>
-                        <td>Total:</td>
-                        <td colspan="3">{{convertToString (totalMoney user.productsInCart)}} VND
-                            <input name="totalMoney" value="{{totalMoney user.productsInCart}}" type="number">
-                        </td>
-                        <td><button id="pay" type="submit">Pay</button></td>
-                    </tr>
+                    <td class="">
+                        <a class="change_quantity-btn" href="/cart/quantity/{{this._id}}?q&type=minus"><i
+                                class="fa-solid fa-minus"></i></a>
+                        <span><b>{{this.quantity}}</b></span>
+                        <a class="change_quantity-btn" href="/cart/quantity/{{this._id}}?q&type=plus"><i
+                                class="fa-solid fa-plus"></i></a>
+                    </td>
+                    <td>{{convertToString (multipli this.price this.quantity)}} VND</td>
+                    <td><a data-id="{{this.name}}" data-bs-toggle="modal" data-bs-target="#deleteProductForm" href=""><i
+                                class="fa-solid fa-trash-can fa-xl"></i></a></td>
+                </tr>
+                {{/each}}
+                <tr>
+                    <td>Total:</td>
+                    <td colspan="5">{{convertToString (totalMoney user.productsInCart)}} VND
+                        <input name="totalMoney" value="{{totalMoney user.productsInCart}}" type="number">
+                    </td>
+                    <td><a href="/payment" id="pay" type="submit">Pay</a></td>
+                </tr>
             </table>
         </form>
         <div class="not_login-ntf container">
@@ -40,49 +50,62 @@
                 <a href="/login">Login</a>
             </div>
         </div>
-    </div>
-</section>
-<div class="modal fade" id="deleteProductForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Delete</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        Are you sure you want to delete it?
-                    </div>
-                    <div class="modal-footer">
-                        <button id="deleteProductBtn" type="button" class="btn btn-danger">Delete</button>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
+        <div class="empty_cart-ntf container">
+            <div class="">
+                <div class="empty_cart-ntf-img">
+                    <img style="filter: grayscale(100%);" src="/images/logo/empty_cart.jpg" alt="">
+                </div>
+                <div class="empty_cart-ntf-content">
+                    <h1>Your Cart Is <b>Empty!</b></h1>
+                    <span>Must add items on the cart before you proceed to check out.</span>
+                    <a href="/products">RETURN TO SHOP</a>
                 </div>
             </div>
         </div>
+    </div>
+</section>
+<div class="modal fade" id="deleteProductForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Delete</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete it?
+            </div>
+            <div class="modal-footer">
+                <button id="deleteProductBtn" type="button" class="btn btn-danger">Delete</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 <form name="delete_product-form" action="" method="post"></form>
 <script>
     let cartForm = document.getElementById('cart_form')
     let ntf = document.querySelector('.not_login-ntf')
     let payBtn = document.getElementById('pay')
-    if (isNaN({{totalMoney user.productsInCart}})) {
+    let emptyCartNtf = document.querySelector('.empty_cart-ntf')
+    if (isNaN({{ totalMoney user.productsInCart }})) {
         cartForm.style.display = "none"
         ntf.style.display = "block"
-    }else{
+        emptyCartNtf.style.display = "none"
+    } else {
         ntf.style.display = "none"
         cartForm.style.display = "block"
     }
-   
+
 </script>
 <script>
-    payBtn.addEventListener('click',() => {
-            if({{user.productsInCart.length}} === 0){
-                alert('Cart is empty')
-                payBtn.type = 'button'
-            }else{
-                alert("Payment success !!!!")
-            }
-        }) 
+    if ({{ user.productsInCart.length }} === 0) {
+        emptyCartNtf.style.display = "block"
+        cartForm.style.display = "none"
+    }else {
+        emptyCartNtf.style.display = "none"
+        cartForm.style.display = "block"
+    }
 </script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {

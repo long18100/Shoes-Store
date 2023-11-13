@@ -1,26 +1,29 @@
-@import 'var.scss';
-#shop-page{
+#shop-page {
     padding-top: 50px;
-    .filter{
+
+    .filter {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        &_nav{
-            a{
+
+        &_nav {
+            a {
                 margin-right: 10px;
                 padding: 10px 20px;
                 border-radius: $radius;
                 background-color: $navFilterColor;
                 color: $whiteColor;
             }
-            
+
         }
-        &_sort{
-            label{
+
+        &_sort {
+            label {
                 font-size: 1.5rem;
                 margin-right: 5px;
             }
-            select{
+
+            select {
                 width: 100px;
                 aspect-ratio: 3/1;
                 outline: none;
@@ -29,13 +32,15 @@
             }
         }
     }
-    .product-quality{
+
+    .product-quality {
         margin: 20px auto;
     }
-    .products{
-        .card{
-            &-body{
-                a{
+
+    .products {
+        .card {
+            &-body {
+                a {
                     padding: 5px 15px;
                     font-size: 1.3rem;
                     color: $whiteColor;

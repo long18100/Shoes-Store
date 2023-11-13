@@ -1,9 +1,7 @@
-@import 'var.scss';
-
 #home-page {
     margin-top: -$navHeight;
 
-    section.slide-show { 
+    section.slide-show {
         width: 100%;
         position: relative;
         height: $slideHeight;
@@ -179,6 +177,7 @@
                 height: $bannerHeight;
 
                 &_box {
+                    width: 100%;
                     height: 100%;
                     background-position: unset;
                     background-size: 100% auto;
@@ -191,8 +190,9 @@
                         height: 30%;
                         padding-left: 20px;
 
-                        h2 {
-                            font-size: 1.6rem;
+                        h1 {
+                            color: $blackColor;
+                            font-size: 2.4rem;
                         }
 
                         span {
@@ -232,7 +232,8 @@
                     color: $blackColor;
                     position: absolute;
                     inset: auto auto 30px 30px;
-                    h1{
+
+                    h1 {
                         font-size: 3.5rem;
                     }
 

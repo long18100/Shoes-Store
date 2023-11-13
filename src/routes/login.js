@@ -3,7 +3,6 @@ const router = express.Router();
 
 const login = require('../app/controllers/LoginController')
 
-//router.get('/:slug', login.show)
 router.get('/login', login.index)
-router.post('/singin', login.singin)
+router.post('/singin', login.signin)
 module.exports = router

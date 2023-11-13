@@ -1,0 +1,95 @@
+<div class="container-fluid payment">
+    <div class="container">
+        <div class="row">
+            <form action="/payment/{{user._id}}" method="post" class="col-6 payment_item">
+                <label class="heading_payment" for="">Customer information</label>
+                <div class="payment_item_cus-infor">
+                    <div class="payment_item_cus-infor-input">
+                        <label for="">Full name:</label>
+                        <input id="pay_input-name" value="{{user.name}}" type="text" name="name" placeholder=""
+                            class="">
+                    </div>
+                    <div class="payment_item_cus-infor-input">
+                        <label for="">Phone number:</label>
+                        <input id="pay_input-number" value="{{user.phoneNumber}}" type="text" name="phoneNumber"
+                            placeholder="" class="">
+                    </div>
+                    <div class="payment_item_cus-infor-input">
+                        <label for="">Address:</label>
+                        <input id="pay_input-address" value="{{user.address}}" type="text" name="address" placeholder=""
+                            class="">
+                    </div>
+                </div>
+                <label class="heading_payment" for="">Form of payment</label>
+                <div class="payment_item_payments">
+                    <div class="">
+                        <input id="p-delivery" type="radio" name="" id="">
+                        <label for="p-delivery">Payment on delivery</label>
+                    </div>
+                    <div class="">
+                        <input disabled type="radio" name="" id="">
+                        <label for="">Mobile banking application</label>
+                    </div>
+                </div>
+                <div class="payment_item_btn">
+                    <button id="submit-pay">Order</button>
+                </div>
+            </form>
+            <div class="col-5 payment_item">
+                <label class="heading_payment" for="">Cart</label>
+                <ul>
+                    {{#each user.productsInCart}}
+                    <li class="d-flex justify-content-between">
+                        <div class="d-flex">
+                            <img src="{{this.image}}" alt="">
+                            <div class="">
+                                <h3>{{this.name}}</h3>
+                                <div class="d-flex align-items-center">
+                                    <h4 class="mr-4">Size: {{this.size}}</h4>
+                                    <h5>{{convertToString this.price}} X {{this.quantity}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <h3>
+                            {{convertToString (multipli this.price this.quantity)}} VND
+                        </h3>
+                    </li>
+                    {{/each}}
+                    <li class="d-flex">
+                        <h2>Total money: {{convertToString (totalMoney user.productsInCart)}} VND</h2>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    let inputName = document.getElementById('pay_input-name');
+    let inputNumber = document.getElementById('pay_input-number');
+    let inputAddress = document.getElementById('pay_input-address');
+    let inputPayMethod = document.getElementById('p-delivery');
+
+    let payBtn = document.getElementById('submit-pay');
+    let check = false;
+
+    payBtn.addEventListener('click', () => {
+        if (inputName.value.trim() === '') {
+            payBtn.type = 'button'
+            inputName.style.border = '1px solid red'
+            alert('Please enter a name!')
+        } else if (inputNumber.value.trim() === '') {
+            payBtn.type = 'button'
+            inputNumber.style.border = '1px solid red'
+            alert('Please enter your phone number!')
+        } else if (inputAddress.value.trim() === '') {
+            payBtn.type = 'button'
+            inputAddress.style.border = '1px solid red'
+            alert('Please enter your address!')
+        } else {
+            inputName.parentNode.submit();
+            inputNumber.parentNode.submit();
+            inputAddress.parentNode.submit();
+            payBtn.type = 'submit'
+        }
+    })
+</script>

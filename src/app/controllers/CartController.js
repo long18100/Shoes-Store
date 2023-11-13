@@ -15,29 +15,23 @@ class CartController {
             )
             .catch(next)
     }
-    add(req, res) {
+
+    async add(req, res) {
         const product = req.body
-        //res.json(product)
         if (product.totalMoney > 0) {
-            User.findOneAndUpdate(
-                {
-                    curent: true,
-                    address: { $ne: '' }
-                },
-                { $push: { Order: product } },
-                { new: true }
-            )
-                .then(success => {
-                    if (success) {
-                        console.log(success);
-                        res.redirect(`/cart`)
-                    } else {
-                        res.redirect(`/info`)
-                    }
-                })
-                .catch(error => {
-                    console.log(error);
-                });
+            try {
+                const user = await User.findOne({ curent: true, address: { $ne: '' } });
+                if (user) {
+                    user.Order.push(...user.productsInCart);
+                    await user.save();
+                    res.redirect(`/cart`);
+                } else {
+                    res.redirect(`/info`);
+                }
+            } catch (error) {
+                console.error(error);
+                res.redirect(`/`);
+            }
             User.findOneAndUpdate({ curent: true }, { $set: { productsInCart: [] } }, { new: true })
                 .then(user => {
                     console.log("Tất cả dữ liệu trong mảng 'productsInCart' đã được xóa.");
@@ -51,13 +45,47 @@ class CartController {
 
     }
     delete(req, res, next) {
-        // User.updateOne({ curent: true }, { $pull: { productsInCart: { _id: req.params.id } } })
-        //     .then((user) => {
-        //         if(user)
-        //             res.redirect(`/cart`)
-        //         else
-        //             res.redirect(`/`)
-        //     })
+        User.findOneAndUpdate(
+            { curent: true },
+            { $pull: { productsInCart: { name: req.params.id } } },
+            { new: true }
+        )
+            .then(user => {
+                if (user) {
+                    res.redirect(`back`);
+                }
+            })
+            .catch(next);
+    }
+    
+    quantity(req, res) {
+        if (req.query.type === "minus") {
+            User.findOneAndUpdate(
+                { curent: true, "productsInCart._id": req.params.quantity },
+                { $inc: { "productsInCart.$.quantity": -1 } },
+                { new: true }
+            ).then((user) => {
+                if (user) {
+                    User.findOneAndUpdate(
+                        { curent: true },
+                        { $pull: { productsInCart: { quantity: 0 } } },
+                        { new: true }
+                    ).then((user) => {
+                        if (user) {
+                            res.redirect(`back`)
+                        }
+                    })
+                }
+            })
+        } else if (req.query.type === "plus") {
+            User.findOneAndUpdate(
+                { curent: true, "productsInCart._id": req.params.quantity },
+                { $inc: { "productsInCart.$.quantity": +1 } },
+                { new: true }
+            ).then((user) => {
+                res.redirect(`back`)
+            })
+        }
     }
 };
 

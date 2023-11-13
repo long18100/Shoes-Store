@@ -5,4 +5,4 @@ const adminController = require('../app/controllers/AdminController')
 
 router.get('/adminCustomer', adminController.adminCus)
 
-module.exports = router
+module.exports = router 

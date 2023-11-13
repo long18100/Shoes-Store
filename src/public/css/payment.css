@@ -1,0 +1,56 @@
+#to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #0000009c;
+  color: #fff;
+  transition: all .5s;
+  opacity: 0; }
+
+.payment {
+  margin: 20px 0; }
+  .payment label {
+    font-size: 1.2rem; }
+  .payment label.heading_payment {
+    font-size: 1.8rem;
+    font-weight: 600; }
+  .payment_item_cus-infor {
+    display: flex;
+    flex-direction: column; }
+    .payment_item_cus-infor-input {
+      margin: 10px 0;
+      display: flex;
+      flex-direction: column; }
+      .payment_item_cus-infor-input input {
+        width: 90%;
+        height: 40px;
+        font-size: 1.6rem;
+        padding-left: 15px;
+        border-radius: 5px;
+        outline: none; }
+  .payment_item_payments div {
+    display: flex;
+    align-items: center; }
+    .payment_item_payments div label {
+      cursor: pointer; }
+    .payment_item_payments div input {
+      margin-right: 5px; }
+  .payment_item_btn button {
+    width: 90%;
+    height: 40px;
+    font-size: 1.6rem;
+    color: #fff;
+    background: #000;
+    border-radius: 5px;
+    margin: 20px 0; }
+  .payment_item ul li {
+    width: 70%;
+    height: 90px;
+    padding: 15px 0; }
+    .payment_item ul li h4 {
+      margin-right: 15px; }
+    .payment_item ul li img {
+      height: 100%;
+      margin-right: 15px; }

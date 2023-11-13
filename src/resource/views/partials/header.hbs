@@ -5,10 +5,10 @@
             <div class="topbar_content-right col-6">
                 <a href="/" class="topbar_content-right-link">Help & FAQs</a>
                 <a href="/login" id="login_link" class="topbar_content-right-link">{{user.name}}<a>
-                <div class="login_option">
-                    <a href="/info">My info</a>
-                    <a href="/?_logout=true">Log out</a>
-                </div>
+                        <div class="login_option">
+                            <a href="/info">My info</a>
+                            <a href="/?_logout=true">Log out</a>
+                        </div>
             </div>
         </div>
     </div>
@@ -36,7 +36,7 @@
                 </a>
                 <a href="/cart">
                     <i class="fa-solid fa-cart-shopping fa-2xl"></i>
-                    <span class="position-absolute">{{user.productsInCart.length}}</span>
+                    <span class="position-absolute">{{countQuantity user.productsInCart}}</span>
                 </a>
                 <a href="/">
                     <i class="fa-regular fa-heart fa-2xl"></i>
@@ -79,8 +79,8 @@
         }
     })
 
-    var currentURL = window.location.href;
-    var link = document.querySelectorAll('.link_page');
+    let currentURL = window.location.href;
+    let link = document.querySelectorAll('.link_page');
     link.forEach((e) => {
         if (e.href == (currentURL)) {
             e.classList.add('active_link');
@@ -113,13 +113,11 @@
         searchForm.style.opacity = 0
     })
     let contentLoginLink = document.getElementById('login_link')
-    
+
     if (contentLoginLink.innerHTML === "My account" || contentLoginLink.innerHTML === "") {
         contentLoginLink.href = "/login"
         contentLoginLink.innerHTML = "My account"
-        
-
-    }else{
+    } else {
         contentLoginLink.href = "/info"
     }
 </script>

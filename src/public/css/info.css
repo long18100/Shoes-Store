@@ -1,6 +1,5 @@
-.info_content {
+.info_content, .info_order {
   display: flex;
-  justify-content: center;
   align-items: center; }
 
 #to-top {
@@ -31,14 +30,6 @@
   flex-direction: column; }
   .info_content_name {
     padding: 20px 0; }
-    .info_content_name i {
-      padding: 20px;
-      margin-right: 10px;
-      color: #fff;
-      border-radius: 50%;
-      background-color: #000; }
-    .info_content_name div h2 {
-      font-size: 1.8rem; }
   .info_content_form {
     width: 550px; }
     .info_content_form-item {
@@ -46,7 +37,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 0; }
+      padding-bottom: 15px; }
       .info_content_form-item label {
         font-size: 1.2rem;
         font-weight: 600; }
@@ -57,10 +48,30 @@
         font-size: 1.5rem;
         font-weight: 600; }
       .info_content_form-item button {
-        width: 100px;
+        width: 80%;
         height: 45px;
         border-radius: 5px;
         background-color: #000;
         color: #fff; }
     .info_content_form-item:last-child {
       justify-content: end; }
+
+.info_order {
+  flex-direction: column; }
+  .info_order .info_order_name {
+    padding: 20px 0; }
+  .info_order table {
+    width: 100%; }
+    .info_order table tr {
+      text-align: center;
+      border: 1px solid #6a6a6a;
+      height: 45px; }
+      .info_order table tr th {
+        font-size: 1.5rem; }
+      .info_order table tr td {
+        border: 1px solid #6a6a6a;
+        font-size: 1.4rem;
+        font-weight: 500; }
+    .info_order table tr:first-child {
+      background-color: #000000;
+      color: #fff; }

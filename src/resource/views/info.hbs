@@ -6,31 +6,60 @@
         </div>
     </div>
     <div class="container">
-        <div class="info_content">
-            <div class="info_content_name d-flex">
-                <h1>My Account</h1>
+        <div class="row">
+            <div class="info_content col-6">
+                <div class="info_content_name d-flex">
+                    <h1>My Account</h1>
+                </div>
+                <form method="post" action="/info/{{user._id}}?_method=PUT" class="info_content_form">
+                    <div class="info_content_form-item">
+                        <label for="">Name:</label>
+                        <input type="text" name="name" value="{{user.name}}" placeholder="Name">
+                    </div>
+                    <div class="info_content_form-item">
+                        <label for="">User Name:</label>
+                        <input type="text" name="username" value="{{user.username}}" placeholder="User name">
+                    </div>
+                    <div class="info_content_form-item">
+                        <label for="">Phone Number:</label>
+                        <input type="text" name="phoneNumber" value="{{user.phoneNumber}}" placeholder="Phone number">
+                    </div>
+                    <div class="info_content_form-item">
+                        <label for="">Address:</label>
+                        <input type="text" name="address" value="{{user.address}}" placeholder="Address">
+                    </div>
+                    <div class="info_content_form-item">
+                        <button>Submit</button>
+                    </div>
+                </form>
             </div>
-            <form method="post" action="/info/{{user._id}}?_method=PUT" class="info_content_form">
-                <div class="info_content_form-item">
-                    <label for="">Name:</label>
-                    <input type="text" name="name" value="{{user.name}}" placeholder="Name">
+            <div class="info_order col-6">
+                <div class="info_order_name">
+                    <h1>My Order</h1>
                 </div>
-                <div class="info_content_form-item">
-                    <label for="">User Name:</label>
-                    <input type="text" name="username" value="{{user.username}}" placeholder="User name">
-                </div>
-                <div class="info_content_form-item">
-                    <label for="">Phone Number:</label>
-                    <input type="text" name="phoneNumber" value="{{user.phoneNumber}}" placeholder="Phone number">
-                </div>
-                <div class="info_content_form-item">
-                    <label for="">Address:</label>
-                    <input type="text" name="address" value="{{user.address}}" placeholder="Address">
-                </div>
-                <div class="info_content_form-item">
-                    <button>Submit</button>
-                </div>
-            </form>
+                <table>
+                    <tr>
+                        <th>Order number</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Size</th>
+                        <th>Quantity</th>
+                        <th>Total amount</th>
+                        <th></th>
+                    </tr>
+                    {{#each user.Order}}
+                    <tr>
+                        <td>{{sum @index 1}}</td>
+                        <td>{{this.name}}</td>
+                        <td>{{convertToString this.price}}</td>
+                        <td>{{this.size}}</td>
+                        <td>{{this.quantity}}</td>
+                        <td>{{convertToString (multipli this.price this.quantity)}} VND</td>
+                        <td><a href="info/{{this._id}}">Cancel order</a></td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </div>
         </div>
     </div>
 </div>
